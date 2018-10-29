@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伪元素选择器</title>
+<style>
+	.first:first-letter{
+		font-size:40px;
+		color:red;
+	}
+	p:first-letter{
+		 color:red;
+		 font-size:40px;
+	}
+	p:first-line{
+		color:green;		
+	}
+	p:hover:before{
+		content:'我懂得';
+		color:yellow;
+	}
+	h2:after{
+		content:'你也懂得';
+
+	}
+	a:before{
+		content:attr(title)
+	}
+	.news li a:before{
+		 content:url(./shipin.png);
+	}
+	ul li a:hover{
+		  color:red;
+		  text-decoration: underline;
+	}
+
+</style>
+</head>
+<body>
+
+   <p>生活不止眼前的苟且，还有诗和远方</p>
+   <h2>高尚是高尚者的通行证，卑鄙是卑鄙者的墓志铭</h2>
+   
+   <ul class="news">
+			<li><a href="#"> 皇马官方宣布C罗转会尤文 </a></li>
+			<li><a href="#"> 9年皇马岁月！谢谢你C罗 </a></li>
+			<li><a href="#"> 9年皇马岁月！谢谢你C罗 </a></li>
+		</ul>
+
+		<p><span class="first">I</span> love You</p>
+
+		<a href="Http://www.baidu.com" title="值得信赖的搜索引擎" target="_blank">
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+
+<style>
+	    .box h2{       /*后代选择器*/
+		color:blue;
+		background-color: yellow;
+		font-family:"微软雅黑";
+	}
+	   .box > h1{         /*子元素选择器*/
+		color:blue;
+		background-color: red;
+		font-family:"微软雅黑";
+	}
+		.one h2{
+			color:green;
+			background-color: blue;
+		}
+		.one > h1{
+			color:red;
+			background-color: yellow;
+		}
+		div,h1,h2{
+			margin:0;
+			padding:0;
+		}
+</style>
+</head>
+<body>
+	<div class="box">
+	 <h1 >我是h1元素，请使用标签选择器为我设置字体大小为14px</h1>
+	 	
+   	<h2>我是h2元素，请使用标签选择器为我设置字体大小为14px</h2>
+	 </div>
+
+	 <div class="one">
+		<h1>我好想睡觉</h1>
+		<h2>我爱学习</h2>
+	 </div>
+
+	  
+</body>
+</html>
