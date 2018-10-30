@@ -1,0 +1,141 @@
+.header{
+	width:100%;
+	height:70px;
+	position: relative;
+}
+.header-title{
+	float:left;
+	font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,Arial,Tahoma;
+	margin-left:140px;
+}
+.header-logo{
+	float:left;
+	width:20px;
+	height:20px;
+	background: url(../images/spritesheet1.png) no-repeat -569px -79px;
+	background-size: 594px 310px;	
+	position: absolute;
+	top:0px;
+	left:110px;
+}
+.content{
+	width:100%;
+	height:500px;
+	margin-top: 0px;
+}
+.content-one{
+	 background:url(../images/pic2.png) no-repeat top center;
+	 width:320px;
+	 height:266px;
+	 margin:0 auto 14px;
+	 background-size: 100% auto;
+}
+.content-two{
+	width:100%;
+	/*margin:0 auto;*/
+	font-size: 40px;
+    line-height: 51px;
+    text-align: center;
+    margin-bottom: 6px;
+}
+.content-three{
+	width:100%;
+	font-size:21px;
+	line-height:23px;
+	text-align: center;
+    font-family: PingFang SC,Droid Sans,Helvetica,Heiti SC,Arial,LiHei Pro Medium,sans-serif;
+}
+.content-four{
+	 background: url(../images/spritesheet1.png) no-repeat -302px -78px;
+	 width:260px;
+	 height:73px;
+	 margin-left:600px;
+	 margin-top: 15px;
+}
+.content-four:hover{
+	 background: url(../images/spritesheet1.png) no-repeat -302px -159px;
+	 cursor: pointer;
+}
+.content-five{
+	background:  url(../images/splitline.png) no-repeat;
+	width:100%;
+	height:20px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.funcarea{
+	width:100%;
+	height:310px;
+	margin-bottom: 20px;
+}
+.funcarea-one,.funcarea-two,.funcarea-three,.funcarea-four,.funcarea-five,.funcarea-six{
+	float:left;
+	width:370px;
+	height:150px;
+	padding:4px 10px;
+}
+.funcarea-one-logo,.funcarea-two-logo,.funcarea-three-logo,.funcarea-four-logo,.funcarea-five-logo,.funcarea-six-logo{
+	float:left;
+	width:74px;
+	height:73px;
+	margin-left: 50px;
+}
+.funcarea-one-logo{
+	background: url(../images/spritesheet1.png) -248px -237px;
+}
+.funcarea-two-logo{
+	background: url(../images/spritesheet1.png) 0px -237px;
+}
+.funcarea-three-logo{
+	background:  url(../images/spritesheet1.png) -415px -237px;
+}
+.funcarea-four-logo{
+	background:  url(../images/spritesheet1.png) -332px -237px;
+}
+.funcarea-five-logo{
+ 	background:  url(../images/spritesheet1.png) -83px -237px;
+}
+.funcarea-six-logo{
+	background:  url(../images/spritesheet1.png) -332px -237px;
+}
+.funcarea-one-title,.funcarea-two-title,.funcarea-three-title,.funcarea-four-title,.funcarea-five-title,.funcarea-six-title{
+	float:left;
+	width:200px;
+	height:30px;
+	margin-left:20px;
+	font-size: 14px;
+    font-weight: 900;
+    line-height: 30px;
+    letter-spacing: .4px;
+    padding-left:0px;
+}
+.funcarea-one-content,.funcarea-two-content,.funcarea-three-content,.funcarea-four-content,.funcarea-five-content,.funcarea-six-content{
+	float:left;
+	width:170px;
+	height:60px;
+	margin-left:20px;
+	font-size: 12px;
+    line-height: 20px;
+}
+.first{
+	margin-left:140px;
+}
+.footer{
+	width:100%;
+	height:50px;
+	/*background: black;*/
+	text-align: center;
+    font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,Arial,Tahoma;
+    font-size: 12px;
+    line-height: 20px;
+    color: #666;
+}
+.footer-one-one,.footer-one-two,.footer-one-three,.footer-one-four{
+	margin-right:50px;	
+}
+.footer-two{
+	margin-top:20px;
+    margin-bottom: 30px;
+    font-size: 12px;
+    color: #ccc;
+}

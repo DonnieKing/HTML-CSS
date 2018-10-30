@@ -1,0 +1,80 @@
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+	padding-top:50px;
+	font-weight:700;
+	font-family: "微软雅黑";
+}
+.nav {
+	margin:0 auto;
+	width:1000px;
+	height:50px;
+	line-height: 30px;
+	background-color: red;
+	cursor: pointer;
+}
+.nav ul{
+	list-style:none;
+}
+
+.nav li a{
+	float:left;
+	position: relative;
+	width: 100px;
+	height: 45px;
+	display: inline-block;
+	padding:13px;
+	font-size: 17px;
+/*	border:1px solid blue;*/
+}
+.nav .b1{
+	 display:block;
+	/* float:left;*/
+	 margin:-8px auto;
+	 padding:15px 15px;
+	 /*border:1px solid blue;*/
+}
+.nav .a1{
+	 display:block;
+	/* float:left;*/
+	 margin:10px auto;
+	 padding:3px 8px;
+	 /*border:1px solid blue;*/
+	 text-align: center;
+}
+
+
+.nav li a:link{
+	text-decoration: none;
+	color:red;
+}
+
+
+img{
+	width:100px;
+	height:40px;
+}
+.b1:hover .mao{
+	position: absolute;
+	margin: 0 auto;
+	display: block;
+	width: 40px;
+	height: 15px;
+	background:url(./作业/images/tmall_bg.png) no-repeat;
+	top: -1px;
+	left: 45px;
+}
+.a1:hover .mao{
+	position: absolute;
+	margin: 0 auto;
+	display: block;
+	width: 40px;
+	height: 15px;   /*图片的宽高*/
+	background:url(./作业/images/tmall_bg.png) no-repeat;
+	top: -19px;
+	left: 38px;
+}
+

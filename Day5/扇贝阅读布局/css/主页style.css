@@ -1,0 +1,91 @@
+body {
+    font-family: PingFangSC-Light, "Helvetica Neue", Helvetica, "Microsoft YaHei", 微软雅黑, Arial, SimHei;
+}
+
+.header{
+	position: relative;
+	width:100%;
+	height:160px;
+	/*background-color:red;*/
+}
+.header-one{
+	/* background: blue;*/
+	 padding-top:10px;
+	 width:100px;
+	 height:30px;
+	 position: absolute;
+	 right:200px;
+}
+
+.header-two{
+	 /*text-align: center;*/
+	 padding-top:50px;
+	 padding-left:650px;
+}
+.header-three{
+	text-align: center;
+	margin-top:23px;
+	margin-left:;
+}
+.header-three a{
+	color: #666;
+	display: inline-block;
+	margin-right:40px;
+}
+.header-three a:link{
+	text-decoration: none;
+}
+
+.main{
+	width:1120px;
+	height:480px;    /*1120*466.66*/
+	/*background: red;*/
+	margin:0 auto;
+}
+.main-one-title{
+	margin-top:-280px;
+	margin-left:100px;
+	line-height: 20px;
+	font-size: 30px;
+	color: #0078a5;
+
+}
+.main-one-one{
+	color:#0078a5;
+	margin-left:50px;
+}
+.funcitem{
+	width:1000px;
+	height:500px;
+	/*background:green;*/
+	margin:0 auto;
+}
+a:link{
+	cursor: pointer;
+}
+.funcitem1,.funcitem2,.funcitem3{
+	float:left;
+	width:307px;
+	height:400px;
+	/*background: red;*/
+}
+.funcitem1-one,.funcitem2-one,.funcitem3-one{
+	text-align: center;
+	padding-top:50px;
+}
+.funcitem1-one-title,.funcitem2-one-title,.funcitem3-one-title{
+	font-size: 20px;
+    font-weight: normal;
+    color: #333;
+}
+.funcitem1-one-content,.funcitem2-one-content,.funcitem3-one-content{
+	color: #666;
+    margin: 0 0 5px;
+}
+
+.footer{
+	width:1210px;
+	height:314px;
+	background:red;
+	margin:0 auto;
+}

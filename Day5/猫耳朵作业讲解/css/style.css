@@ -1,0 +1,52 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	font: 12px "微软雅黑";
+	padding-top:100px;
+}
+
+.nav{
+	width: 1200px;
+	height: 40px;
+	background: #FF0036;
+	margin: 0 auto;
+}
+
+.nav a{
+	position: relative;
+	/*background: green;*/
+	height: 40px;
+	line-height: 40px;
+	color:#FFF;
+	padding: 0 15px;
+	margin-right:10px;
+	display: block;
+	text-decoration: none;
+	float:left;
+	font-size: 16px;
+}
+
+.nav a img{
+	width: 90px;
+	height: 36px;
+	vertical-align: middle;
+}
+
+.nav .mao{
+	position: absolute;
+	z-index: -1;
+	top:0;
+	left: 50%;
+	margin-left:-20px;
+	display: block;
+	width: 40px;
+	height: 15px;
+	background: url(../images/tmall_bg.png) no-repeat;
+}
+
+.nav a:hover .mao{
+	top:-10px;
+}

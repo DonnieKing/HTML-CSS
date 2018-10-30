@@ -1,0 +1,219 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	font:12px "Microsoft YaHei","Helvetica Neue",Helvetica,Arial,Tahoma;
+}
+
+.container{
+	width: 1200px;
+	margin: 0 auto;
+}
+
+
+/*头部*/
+
+.header{
+	position: relative;
+	height: 46px;
+	/*background: pink;*/
+}
+
+/*logo*/
+
+.header-logo{
+	position: absolute;
+	top:50%;
+	left: 0;
+	margin-top:-10px;
+	float: left;
+	width: 20px;
+	height: 20px;
+	background: url(../images/spritesheet.png) no-repeat -569px -79px;
+	background-size: 594px 310px;	
+}
+
+.header-title{
+	float: left;
+	font-size: 15px;
+	font-weight: 400;
+	/*background: red;*/
+	padding-left: 30px;
+	line-height: 46px;
+}
+
+
+
+
+/*内容*/
+.content{
+	/*height: 600px;*/
+	/*background: #ffffcc;*/
+}
+
+.content-top-animation{
+	width: 320px;
+    height: 260px;
+    margin: 0 auto 14px;
+/*    background: red;*/
+}
+
+
+.content-animation-inner{
+    width: 100%;
+    height: 100%;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+	background-image: url(../images/pic.png);
+}
+
+.content-title{
+	padding: 0 10px;
+    font-size: 40px;
+    line-height: 51px;
+    text-align: center;
+  /*  background: red;*/
+}
+
+.content-subtitle{
+	margin-top: 9px;
+    font-size: 19px;
+    line-height: 30px;
+    text-align: center;
+}
+
+
+.content-btn{
+	width: 257px;
+    height: 69px;
+    margin: 16px auto 0;
+    cursor: pointer;
+    background-image: url(../images/spritesheet.png);
+    background-position: -302px -79px;
+    background-size: 594px 310px;
+}
+
+.content-btn:hover{
+    background-position: -302px -158px;
+}
+
+.content-splitline{
+	width: 100%;
+	height: 19px;
+    margin-top: 20px;
+	margin: 15 auto;
+	background: url(../images/splitline.png) no-repeat center;
+/*	background: red;*/
+}
+
+/*功能*/
+.funcarea {
+    
+    position: relative;
+    width: 1200px;
+    margin:0px auto 42px;
+    /*text-align: center;*/
+}
+
+.funcitem {
+    position: relative;
+    display: inline-block;
+    width: 260px;
+    height: 70px;
+    padding-left: 96px;
+    margin: 36px 60px 14px 25px;
+    text-align: left;
+    background:red;
+}
+.funcitem-icon{
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    left: 0;
+    background: 0 0/73px 73px no-repeat;
+}
+.icon-paintingicon{
+	/*position:absolute;*/
+    width:73px;
+    height: 73px;
+    background-image: url(../images/spritesheet1.png);
+    background-position: -250px -240px;
+    /*background-color: blue;*/
+}
+
+.icon-conversationicon {
+        width:73px;
+    height: 73px;
+    background-image: url(../images/spritesheet1.png);
+    background-position: 0 -237px;
+}
+.icon-dictionaryicon {
+        width:73px;
+    height: 73px;
+    background-image: url(../images/spritesheet1.png);
+    background-position: -415px -237px;
+}
+.icon-offlineicon {
+    background-image: url(../images/spritesheet1.png);
+    background-position: -332px -237px;
+}
+.icon-speakingicon {
+    background-image: url(../images/spritesheet1.png);
+    background-position: -83px -237px;
+}
+.icon-excellenticon {
+    background-image: url(../images/spritesheet1.png);
+    background-position: -166px -237px;
+}
+.icon{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  /*  transition: opacity .3s ease-in-out;*/
+}
+.funcitem-title {
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 30px;
+    letter-spacing: .4px;
+}
+.funcitem-subtitle {
+    width: 174px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+
+
+
+
+/*底部*/
+.footer{
+	text-align: center;
+	
+}
+
+.footer-contactus{
+    margin-bottom: 13px;
+    /*background: red;*/
+}
+
+.footer-contactus span{
+	margin: 0 12px;
+	/*background: red;*/	
+}
+
+.footer-contactus a{
+	color:#666;
+	text-decoration: none;
+}
+
+.footer-copyright{
+	margin-bottom: 30px;
+    font-size: 12px;
+    color: #ccc;
+}

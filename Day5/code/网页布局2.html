@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>布局二</title>
+</head>
+		<style>
+			.wrap{
+				width:1000px;
+				margin:0 auto;
+			}
+			#top{
+				height:100px;
+				background:#FFcccc;
+			}
+			#content{
+				height:400px;
+				background: #CCFFFF;
+			}
+			.content-one{
+				float:left;
+				height:400px;
+				width:300px;
+				background: red;
+			}
+			.content-two{
+				float:left;
+				height:400px;
+				width:700px;
+				background:blue;
+			}
+			#bottom{
+				height:200px;
+				background:yellow;
+			}
+		</style>
+<body>	
+	<div class="wrap">
+		<div id="top"></div>
+		<div id="content">
+			<div class="content-one">内容1</div>
+			<div class="content-two">内容2</div>
+		</div>
+		<div id="bottom"></div>
+	
+	</div>
+</body>
+</html>

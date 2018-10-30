@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>布局4</title>
+		<style>
+			.wrap{
+				width: 1200px;
+				margin: 0 auto;
+			}
+			#top{
+				height: 30px;
+				background: #ccc;
+			}
+
+			#header{
+				height: 100px;
+				background: #ccccff;
+			}
+
+			#content{
+				height: 400px;
+				/*background: #ffffcc;*/
+			}
+
+			.content-one{
+				height: 100px;
+				background: #eaeaea;
+			}
+
+			.content-two{
+				height: 200px;
+				background: pink;
+			}
+
+			.content-three{
+				height: 100px;
+				background: #eaeaea;
+			}
+
+			#footer{
+				height: 100px;
+				background: #999;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">Top</div>
+		<div id="header" class="wrap">Header</div>
+		<div id="content">
+			<div class="content-one wrap">内容一</div>
+			<div class="content-two">内容二</div>
+			<div class="content-three wrap">内容三</div>
+		</div>
+		<div id="footer">Footer</div>
+	</body>
+</html>
