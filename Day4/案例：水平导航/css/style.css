@@ -1,0 +1,57 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	padding-top: 100px;
+	font:12px tahoma,arial,'Hiragino Sans GB',"微软雅黑";
+}
+
+ul{
+	list-style: none;
+}
+
+.nav{
+	height: 30px;
+	line-height: 30px;
+	width: 1200px;
+	margin: 0 auto;
+	/*background: red;*/
+}
+
+
+.nav a:link{
+	color:#333;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.nav-left a.home{
+	color: #0f64c2;
+}
+
+.nav-left li{
+	float: left;
+	text-align:center;
+	width: 110px;
+	/*background: green;*/
+	margin-right: 30px;
+	/*border:1px solid red;*/
+}
+
+.nav-left li a{
+	padding: 10px 20px;
+	/*border-bottom:1px solid red;*/
+	font-weight: 700;
+}
+
+.nav-left li:hover a{
+	border-bottom: 4px solid #0f64c2;
+}
+
+.nav-right{
+	float: right;
+	/*background: green;*/
+}
+

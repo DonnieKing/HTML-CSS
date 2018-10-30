@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			.download,.zhuanti{
+				background-image: url(./images/btn.jpg);
+				background-repeat: no-repeat;
+			}
+
+			.download:hover,.zhuanti:hover{
+				cursor: pointer;
+			}
+
+			.download{
+				width: 256px;
+				height: 62px;
+				background-position:0 0;
+			}
+
+			.download:hover {				
+				background-position: 0 -62px;
+			}
+
+			.zhuanti{
+				width: 225px;
+				height: 62px;
+				background-position:-256px 0;
+			}
+
+			.zhuanti:hover{
+				background-position: -256px -62px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="download"></div>
+		<div class="zhuanti"></div>
+	</body>
+</html>

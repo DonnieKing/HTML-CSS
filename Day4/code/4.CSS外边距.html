@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS边框-margin</title>
+		<style>
+			.box1,.box2,.box3,.box4,.box5{
+				width: 500px;
+				height: 200px;
+				border:1px solid red;	
+			}
+
+			.box1{
+				margin-top:20px;
+				margin-right: 20px;
+				margin-bottom: 20px;
+				margin-left: 20px;
+			}
+
+			/*简写*/
+
+			/*如果是一个值的时候*/
+			.box2{
+				margin:20px; /*所有*/
+			}
+
+
+			/*如果是两个值的时候*/
+			.box3{
+				margin:10px 20px; /*上下、左右*/
+			}
+
+			/*如果是三个值的时候*/
+			.box4{
+				margin:10px 20px 30px; /*上、左右、下*/
+			}
+
+			/*如果是四个值的时候*/
+			.box5{
+				margin:10px 20px 30px 40px;  /*上、右、下、左*/
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="box1">box1</div>
+		<div class="box2">box2</div>
+		<div class="box3">box3</div>
+		<div class="box4">box4</div>
+		<div class="box5">box5</div>
+	</body>
+</html>

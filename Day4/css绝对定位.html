@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>css相对定位</title>
+	<style>
+		.box1,.box2,.box3{
+			width:200px;
+			height: 200px;		
+		}
+		.box1{
+			background: red;
+			position:relative;
+		}
+		.box2{
+			background: green;
+		}
+		.box3{
+			background:blue;
+		}
+		.box4{
+			width:100px;
+			height:100px;
+			background: yellow;
+			position:absolute;
+			left:0px;
+			top:0px;
+		}
+	</style>
+</head>
+<body>	
+	<div class="box1">box1
+		<div class="box4">box4</div>
+	</div>
+	<div class="box2">box2</div>
+	<div class="box3">box3</div>
+	
+	
+</body>
+</html>
