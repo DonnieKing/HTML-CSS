@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			.box{
+				text-align: center;
+				width: 220px;
+				height: 213px;
+				/*background: red;*/
+				margin: 100px auto;
+				border:26px solid pink;
+				border-image-source: url(./images/border_bg.png);
+				border-image-slice: 26;
+				border-image-repeat: stretch;  /*拉伸*/
+				border-image-width: 26px;
+
+				/*兼容谷歌、苹果*/
+				-webkit-border-image-source: url(./images/border_bg.png);
+				-webkit-border-image-slice: 26;
+				-webkit-border-image-repeat: stretch;
+				-webkit-border-image-width: 26px;
+
+
+				/*兼容火狐*/
+				-moz-border-image-source: url(./images/border_bg.png);
+				-moz-border-image-slice: 26;
+				-moz-border-image-repeat: stretch;
+				-moz-border-image-width: 26px;	
+
+				 /*兼容欧朋*/
+
+				-o-border-image-source: url(./images/border_bg.png);
+				-o-border-image-slice: 26;
+				-o-border-image-repeat: stretch;
+				-o-border-image-width: 26px;
+
+				/*兼容IE9*/
+				-ms-border-image-source: url(./images/border_bg.png);
+				-ms-border-image-slice: 26;
+				-ms-border-image-repeat: stretch;
+				-ms-border-image-width: 26px;
+
+			}
+
+			.box img,.box2 img{
+				width: 100%;
+				vertical-align: middle;
+			}
+
+
+			.box2{
+				text-align: center;
+				width: 220px;
+				height: 213px;
+				margin: 100px auto;
+				border:26px solid pink;
+				border-image:url(./images/border_bg.png) 26 26 round;
+				-webkit-border-image:url(./images/border_bg.png) 26 26 round;
+				-o-border-image:url(./images/border_bg.png) 26 26 round;
+				-moz-border-image:url(./images/border_bg.png) 26 26 round;
+				-ms-border-image:url(./images/border_bg.png) 26 26 round;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="./images/wangzihao.jpg">
+		</div>
+
+		<div class="box2">
+			<img src="./images/wangzihao.jpg">
+		</div>
+	</body>
+</html>

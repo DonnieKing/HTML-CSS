@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+
+			
+			.box{
+				width: 200px;
+				height: 200px;
+				background: red;
+				transition: transform 1s linear,background 2s,width 3s;
+				/*transition: all 2s;*/
+			}
+
+			.box:hover{
+				width:100px;
+				background: green;
+				transform: translate(500px,0px);
+				-webkit-transform: translate(500px,0px);
+				-o-transform: translate(500px,0px);
+				-moz-transform: translate(500px,0px);
+				-ms-transform: translate(500px,0px);
+			}
+			
+		
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+
+	</body>
+</html>

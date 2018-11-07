@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片填充边框</title>
+	 <style>
+		.box{
+			width:200px;
+			height:200px;
+	        background: red;
+	        margin:100px auto;
+	        border-image:url(./code/images/border_bg.png) 26 round;
+	        border:26px solid yellow;
+	        -webkit-border-image:url(./code/images/border_bg.png) 26  round;
+		    -o-border-image:url(./code/images/border_bg.png) 26  round;
+			-moz-border-image:url(./code/images/border_bg.png) 26  round;
+			-ms-border-image:url(./code/images/border_bg.png) 26  round;
+		}
+		.box img,.box2 img{
+			width:100%;
+			vertical-align: middle;
+		}
+		.box2{
+			width:200px;
+			height:200px;
+	        background: red;
+	        margin:100px auto;
+	        border-image:url(./code/images/border_bg.png) 26 stretch;
+	        border:26px solid yellow;
+	        -webkit-border-image:url(./code/images/border_bg.png) 26  stretch;
+		    -o-border-image:url(./code/images/border_bg.png) 26  stretch;
+			-moz-border-image:url(./code/images/border_bg.png) 26  stretch;
+			-ms-border-image:url(./code/images/border_bg.png) 26  stretch;
+		}
+	 </style>
+</head>
+<body>
+	 <div class="box">
+		<img src="./code/images/shuaige.jpg">
+	 </div>
+	 <div class="box2">
+		<img src="./code/images/shuaige.jpg">
+	 </div>
+</body>
+</html>

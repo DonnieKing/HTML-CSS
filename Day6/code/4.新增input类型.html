@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- 
+			新增input类型：type属性值
+
+			color：用于选取颜色。
+			date：从一个日期选择器选择一个日期。
+			datetime-local：选择一个日期和时间 (无时区)。
+			email：输入一个email邮箱。
+			url：输入一个url地址。
+			number：输入一个数值。
+			range：一定范围内数字值。显示为滑动条。
+			search：定义一个搜索域。
+			tel：输入电话号码字段。
+			month：选择一个月份。
+			time：选择一个时间。
+			week：选择周和年。
+
+		 -->
+		 <form action="" method="POST" autocomplete="off">
+			<p>用户名：<input type="text" name="username" autocomplete="on"></p>
+			<p>邮箱：<input type="email" name="email" placeholder="请输入邮箱" required></p>
+			<p>年龄：<input type="range" value="10"></p>
+			<p>时间：<input type="date"></p>
+			<p>手机号：<input type="tel"></p>
+			<input type="submit" value="注册">
+		 </form>
+	</body>
+</html>
