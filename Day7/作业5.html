@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta charset="UTF-8">
+	<title>作业5</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+		}
+		.box{
+			display: flex;
+			flex-direction: row;
+			flex-wrap:nowrap;
+			width:100%;
+			height:300px;
+			/*background: red;*/
+		}
+		.box-one{
+			 width:25%;
+			 height:60%;
+			 background: #FFCCF7;
+		}
+		.box-two{
+			width:50%;
+			height:100%;
+			background: #B0FFFC;
+		}
+		.box-three{
+			width:25%;
+			height:60%;
+			background: #FEFAB1;
+		}
+		@media(max-width: 992px){
+			.box{
+				flex-direction: row;
+				flex-wrap:wrap;
+			}
+			.box-one{
+				flex:1 1 33.3%;
+			}
+			.box-two{
+				flex:1 1 66.7%;
+			}
+		}
+		@media(max-width:480px){
+			.box{
+				flex-direction:row;
+				flex-wrap:wrap;
+			}
+			.box-one{
+				flex:1 1 100%;
+			}
+			.box-two{
+				flex:1 1 100%;
+			}
+			.box-three{
+				flex:1 1 100%;
+			}
+		}
+
+	</style>
+</head>
+<body>
+	 <div class="box">
+		<div class="box-one"></div>
+		<div class="box-two"></div>
+		<div class="box-three"></div>
+	 </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Document</title>
+		<style>		
+			
+			*{
+				padding: 0;
+				margin: 0;
+			}
+				
+			.menu{
+				display: flex;
+				flex-direction: row;
+				flex-wrap: nowrap;
+				width: 100%;
+				border:1px solid green;
+				text-align: center;
+				background: red;
+				box-sizing: border-box;
+			}
+
+			.menu li{
+				flex:1 1 100%;
+				list-style:none;
+				height: 40px;
+				line-height: 40px;
+			}
+
+			.menu a{
+				color: #FFF;
+				text-decoration: none;
+			}
+
+			/*中等屏幕*/
+			@media (max-width: 992px){
+				.menu{
+					flex-wrap: wrap;
+				}
+
+				.menu li{
+					flex:1 1 50%;
+				}
+
+			}
+
+			/*小屏幕*/
+			@media (max-width: 480px){
+				.menu{
+					flex-direction: column;
+				}
+
+				.menu li{
+					flex:1 1 100%;
+				}
+
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="menu">
+			<li><a href="#">1111</a></li>
+			<li><a href="#">2222</a></li>
+			<li><a href="#">3333</a></li>
+			<li><a href="#">4444</a></li>
+			<li><a href="#">5555</a></li>
+			<li><a href="#">6666</a></li>
+		</ul>
+	</body>
+</html>

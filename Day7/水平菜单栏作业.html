@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta charset="UTF-8">
+	<title>水平菜单栏</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+		}
+		.menu{
+			display: flex;
+			flex-direction:column;
+			flex-wrap:wrap;
+			width:100%;
+			/*height:300px;*/
+			background:red;
+			text-align: center;
+			/*border:1px solid blue;*/
+		}
+		.menu li{
+			 flex:1 1 100%;
+			 list-style: none;
+			 height:40px;
+			 line-height: 40px;
+			 font-size: 20px;
+		}
+		.menu a{
+			text-decoration: none;
+			color:#FFF;
+		}
+
+		@media(min-width:768px) {
+			  .menu{
+			  	 flex-direction: row;
+			  	 flex-wrap:wrap;
+			  }
+			  .menu li{
+			  	flex:1 1 50%;
+			  }
+		}
+
+		@media(min-width:992px){
+			.menu{
+				flex-direction:row;
+				flex-wrap:nowrap;
+			}
+			.menu li{
+				flex:1 1 16.6%;
+			}
+		}
+
+		.menu-one{
+			background: #38ACD1;
+		}
+		.menu-two{
+			background: #307AAB;
+		}
+		.menu-three{
+			background: #982451;
+  		}
+		.menu-four{
+			background: #E15258;
+		}
+		.menu-five{
+			background: #CC6698;
+		}
+		.menu-six{
+			background: #53AB43;
+		}
+	</style>
+</head>
+<body>
+	 <ul class="menu">
+		<li class="menu-one"><a href="">HTML</a></li>
+	    <li class="menu-two"><a href="">CSS</a></li>
+		<li class="menu-three"><a href="">JAVASCRIPT</a></li>
+		<li class="menu-four"><a href="">PHP</a></li>
+		<li class="menu-five"><a href="">MYSQL</a></li>
+		<li class="menu-six"><a href="">LINUX</a></li>
+	 </ul>
+</body>
+</html>

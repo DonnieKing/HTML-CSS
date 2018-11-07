@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			@keyframes tuski{
+				0%{
+					background-position: 0 0;
+				}
+
+				100%{
+					background-position: 0 -140px;
+				}
+			}
+
+			.box{
+				width: 32px;
+				height: 35px;
+				background:  url(./images/tuski.png) no-repeat 0 0;
+				/*steps(4) 表示让整个动画在4个关键帧之间切换*/
+				animation: tuski 400ms steps(4) infinite;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>

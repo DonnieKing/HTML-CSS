@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			/*定义一个切换背景颜色的动画*/
+			@keyframes changeColor {
+				0% {
+					background: green;
+				}
+
+				25%{
+					background: pink;
+				}
+
+				50%{
+					background: blue;
+				}
+
+				75%{
+					background: yellow;
+				}
+
+				100%{
+					background: red;
+					width: 200px;
+					height: 200px;
+				}
+			}
+
+			.box{
+				width: 100px;
+				height: 100px;
+				border:1px dashed red;
+				animation:changeColor 2s linear 2s infinite alternate;
+				-webkit-animation:changeColor 2s linear 2s infinite alternate;
+				-o-animation:changeColor 2s linear 2s infinite alternate;
+				-moz-animation:changeColor 2s linear 2s infinite alternate;
+			}
+
+			.box:hover{
+				
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>

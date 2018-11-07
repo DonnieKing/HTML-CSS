@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业二</title>
+	<style>
+	   *{
+	   	 margin:0;
+	   	 padding:0;
+	   }
+		.one{
+			position: relative;
+			width:1478px;	
+			height:1120px;
+			background: url(./code/images/bg3.jpg) no-repeat;
+			background-size: 1500px,1100px;
+		}
+		@keyframes woman{
+			0%{
+				top:165px;
+			}
+			60%{
+				top:155px;
+			}
+		}
+		.box{
+			position: absolute;
+			top:15%;
+			left:20%;
+			margin:0 auto;
+			width:331px;
+			height:316px;
+			background:  url(./code/images/woman.png) no-repeat;
+			animation: woman 0.3s  infinite;
+		}
+		.box2{
+			width:1000px;
+			height:475px;
+			background:  url(./code/images/jd_main.png) no-repeat;
+			margin:0 auto;
+		}
+		.box3{
+			width:806px;
+			height:434px;
+			background:  url(./code/images/jd_main2.png) no-repeat;
+			margin:0 auto;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="one">
+	<div class="box"></div>
+	<div class="box2"></div>
+	<div class="box3"></div>
+	</div>
+</body>
+</html>

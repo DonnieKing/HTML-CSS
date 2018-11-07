@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+
+			.ad{
+				position: absolute;
+				top: 0;
+				right: 0;
+				/*background: green;*/
+				/*display: none;*/
+			}
+	
+
+			.ad img{
+				width:90px;
+				height: 90px;
+				transition:all .2s;
+			}
+
+			.ad:hover img{
+				width: 110px;
+				height: 110px;
+			}
+
+			.ad .close-btn{
+				display: block;
+				width: 22px;
+				height: 22px;
+				background: url(./images/hao123.png) no-repeat -513px -206px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top:-6px;
+				margin-left:-2px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+		需求分析： 
+			1、广告整体是定位在右上角的位置——绝对定位 position
+			2、鼠标放上去之后广告图片放大过渡效果——transition
+			3、点击关闭图标会隐藏整个广告——JS点击事件 onclick
+		-->
+		<div class="ad" id="j_ad">
+			<a href="#" target="_blank">
+				<img src="./images/dati.png">
+			</a>
+			<span class="close-btn" onclick="document.getElementById('j_ad').style.display='none'"></span>
+		</div>
+
+		<a href="javascript:;" onclick="alert('ok')">百度一下</a>
+	</body>
+</html>
