@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>显示和隐藏</title>
+	<style>
+	    .photo{
+	    	padding:10px;
+	    }
+		.photo img{
+			width:300px;
+			height:300px;
+			cursor:pointer;
+		}
+		.btn{
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+		<button class="btn" onclick="photo()">显示和隐藏(方法一)</button>
+		<button class="btn" id="J_btn">显示和隐藏(方法二)</button>
+	<div class="photo" id="J_photo" style="display: block">
+		<img src="./code/images/shuaige.jpg">
+	</div>
+	 
+	  <script>
+	  		function photo(){
+	  			var ophoto = document.getElementById("J_photo");
+	  			if(ophoto.style.display == 'none'){
+	  				ophoto.style.display = 'block';  
+	  			}
+	  			else{
+	  				ophoto.style.display= 'none';
+	  			}
+	  		}
+
+	  		document.getElementById("J_btn").onclick= photo;
+	  </script>
+</body>
+</html>
+
+
+  第1种：
+      function photo(){
+			var ophoto=document.getElementById("J_photo");
+			if(ophoto.style.display == "none"){
+				<!-- console.log(ophoto.style.display); -->
+				 ophoto.style.display= 'block';
+			}
+			else{
+				ophoto.style.display = 'none';
+			}
+      }
+      第2种:
+        	document.getElementById("J_btn").onclick= photo;
+

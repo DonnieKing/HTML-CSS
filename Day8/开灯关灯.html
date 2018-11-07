@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>开灯关灯</title>
+	<style>
+		.day{
+			background: #FFF;
+			color:#000;
+		}
+		.night{
+			background: #000;
+			color:#FFF;
+		}
+	</style>
+</head>
+<body>
+	 <button type="button" class="btn" id="J_btn">开灯/关灯</button>
+		<p>确保以习近平为核心的党中央定于一尊的权威</p>
+	 <script>
+	 		document.getElementById('J_btn').onclick=function(){
+	 			// alert('ok');
+	 			if(document.body.className =="" || document.body.className == "day"){
+	 				document.body.className="night";
+	 			}
+	 			else{
+	 				document.body.className="day";
+	 			}
+	 		}
+	 </script>
+</body>
+</html>
+
+
+   <!-- document.getElementById('J_btn').onclick=function(){
+   		if(document.body.className == "" || document.body.className=="day"){
+   			document.body.className="night";
+   		}
+   		else{
+   			document.body.className='day';
+   		}
+   } -->

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>鼠标提示特效</title>
+	<style>
+	 	label{
+	 		cursor:pointer;
+	 	}
+		.tips{
+			background: yellow;
+			color:red;
+			width:250px;
+			height:50px;
+			display:none;
+		}
+		
+	</style>
+</head>
+<body>
+	 <label for="freeLogin" onmouseover="document.getElementById('J_tips').style.display='block'" onmouseout="document.getElementById('J_tips').style.display='none'">
+		<input type="checkbox" id="freeLogin">十天内免登陆
+	 </label>      
+	 <!-- for="id"  规定 label 绑定到哪个表单元素。 -->
+	 <div class="tips" id="J_tips">
+		为了您的邮箱安全，请勿在网吧或公共场合使用此功能
+	 </div>
+</body>
+</html>

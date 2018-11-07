@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业二div变色</title>
+	<style>
+		.box{
+			width:200px;
+			height:200px;
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<button  onclick="tobgcolor('green');">变绿</button>
+	<button  onclick="tobgcolor('yellow');">变黄</button>
+	<button  onclick="tobgcolor('black');">变黑</button>
+	<div class="box" id="J_box"></div>
+	  <script>
+
+	  		 function tobgcolor(color){
+	  		 	document.getElementById("J_box").style.background=color;
+	  		 }
+	  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<button type="button" onclick="alert('ok');">不要点我</button>
+		<button type="button" onclick="demo();">不要点我2</button>
+		<button type="button" id="J_btn">不要点我3</button>
+		<script>
+			//自定义一个函数
+			function demo(){
+				alert('ok');
+			}
+			// demo();  //调用函数
+			
+			// document.getElementById('J_btn').onclick = demo;
+
+			document.getElementById('J_btn').onclick = function(){
+				alert('ok2');
+			}
+
+		</script>
+	</body>
+</html>

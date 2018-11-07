@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业四人人网</title>
+	<style>
+		@keyframes content1{
+			0%{
+				background-position: 0 -1800px;
+			}
+			100%{
+				background-position: 0 -2850px;
+			}
+		}
+		@keyframes content2{
+			0%{
+				background-position: 0 0px;
+			}
+			100%{
+				background-position: 0 -1800px;
+			}
+		}
+		/*.content{
+
+			width:600px;
+			height:400px;
+			margin:150px auto;
+		}*/
+		.content-one{
+			/*float:left;*/
+			width:150px;
+			height:150px;
+			background: green url(./code/images/qrcode1-t.jpg) no-repeat ;
+			background-position: 0 0px;
+			/*cursor:pointer;
+			animation:content1 0.3s steps(7) ;*/
+		}
+		/*.content-one:hover{
+			cursor:pointer;
+			animation:content1 0.3s steps(7) ;
+		}*/
+	</style>
+</head>
+<body>
+	<!-- <div class="content"> -->
+		<div class="content-one" id="J_content-one" onmouseover="active();"  onmouseout="unactive();">
+			<a  href="#"></a>
+		</div>
+	<!-- </div> -->
+
+		<script>
+				var  one=document.getElementById('J_content-one');
+			function active(){
+				 one.style.animation="content2 .5s steps(12)";
+				  one.style.backgroundPosition="0 -1800px";
+			}
+			function unactive(){
+				one.style.animation="content1  0.5s steps(7)";
+				one.style.backgroundPosition="0 0";
+			}
+		</script>
+</body>
+</html>

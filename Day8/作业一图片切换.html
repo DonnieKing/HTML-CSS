@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业一图片切换</title>
+	<link rel="stylesheet" href="./css/labixiaoxin.css" id="J_link">
+</head>
+<body>
+	<button  onclick="picture('labixiaoxin');">蜡笔小新</button>
+	<button  onclick="picture('haizeiwang');">海贼王</button>
+	<button  onclick="picture('huoyingrenzhe');">火影忍者</button>
+	<button  onclick="picture('duolaAmeng');">哆啦A梦</button>
+	
+	<script>
+		function picture(picture){
+			document.getElementById('J_link').href = "./css/"+picture+".css";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.ad{
+			position: absolute;
+			top:0;
+			right:0;
+		}
+		.ad img{
+			width:90px;
+			height:90px;
+			transition:all 0.3s;
+		}
+		.ad:hover img{
+			width:110px;
+			height:110px;
+		}
+		.box{
+			background: url(./code/images/hao123.png) no-repeat -513px -206px;
+			display: block;
+			width:22px;
+			height:23px;
+			position: absolute;
+			top:50%;
+			left:50%;
+			margin-top:-10px;
+			margin-left:-5px;
+			cursor: pointer;
+		}
+	</style>
+
+		<script>
+			window.onload =function(){
+			 document.getElementById('j_box').onclick = function(){
+			 	 document.getElementById('j_ad').style.display = "none";
+			 }
+			}
+			
+		</script>	
+</head>
+<body>
+ 	<div class="ad" id="j_ad">
+		<a href=""><img src="./code/images/dati.png"></a>
+		<span class="box" id="j_box"></span>
+ 	</div>
+
+	
+</body>
+</html>
+<!-- 	<script>
+    window.onload =function(){
+    	document.getElementById('j_box').onclick = function(){
+    		document.getElementBuId('j_ad').style.display="none";
+    	}
+    }
+    </script> -->
+
+    <!-- window.onload =function(){
+    	document.getElementById('j_box').onclick=function(){
+    		document.getElementById('j_ad').style.display="none";
+    	}
+    } -->

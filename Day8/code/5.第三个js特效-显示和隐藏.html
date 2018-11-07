@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			.btn{
+				cursor: pointer;
+			}
+
+		</style>
+	</head>
+	<body>
+		<button type="button" class="btn" onclick="demo();">自定义函数</button>
+		<!-- 为某元素指定点击事件的第一种方式：在 HTML 中，使用 onclick 属性 -->
+		<button type="button" class="btn" onclick="photo();">显示/隐藏（第一种）</button>
+		<button type="button" class="btn" id="J_btn">显示/隐藏（第二种）</button>
+		<div id="J_photo" style="display: none;">
+			<img src="./images/jayjun.jpg">
+		</div>
+		<script>
+			//自定义一个demo函数
+			function demo(){
+				alert('ok');
+			}
+
+			// demo();//调用自定义demo函数
+
+
+			// 定义一个实现显示/隐藏图片的photo函数
+			function photo(){
+
+				//定义一个oPhoto变量来存储id值为J_photo元素的对象
+				var oPhoto = document.getElementById("J_photo");
+				// console.log(oPhoto.style.display);
+				
+				if(oPhoto.style.display == 'none'){
+					//如果图片是隐藏的，则显示
+					oPhoto.style.display = 'block';
+				}else{
+					//如果图片是显示的，则隐藏
+					oPhoto.style.display = 'none';
+				}
+			}
+
+
+			// 为某元素指定点击事件的第二种方式：在 JavaScript 中，使用 onclick属性
+				document.getElementById('J_btn').onclick = photo;
+
+		</script>
+	</body>
+</html>

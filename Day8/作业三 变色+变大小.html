@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业三变色+变大小</title>
+	<style>
+
+		.box{
+			width:200px;
+			height:200px;
+			background: red;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="box" id="J_box" onmouseover="color1('400px','400px','green');"  onmouseout="color1('200px','200px','red')"></div>
+	<script>
+		var ocolor=document.getElementById('J_box');
+		function color1(a,b,c){
+			ocolor.style.width=a;
+			ocolor.style.height=b;
+			ocolor.style.background=c;
+		}
+		// function color2(){
+		// 	ocolor.style.width="200px";
+		// 	ocolor.style.height="200px";
+		// 	ocolor.style.background="red";
+		// }
+	</script>
+
+	
+</body>
+</html>
