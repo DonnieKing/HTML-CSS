@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡练习</title>
+ <style>
+	 	*{
+	 		margin:0;
+	 		padding:0;
+	 	}
+	 	body{
+	 		padding:50px;
+	 	}
+		.card{
+			width:600px;
+			height:300px;
+			/*background: red;*/
+		}
+		 .card li{
+		 	list-style: none;
+		 	float:left;
+		 	display: block;
+		 	width:100px;
+		 	height:25px;
+		 	line-height: 25px;
+		 	text-align: center;
+		 	border:1px solid blue;
+		 	/*background: gray;*/
+		 	cursor:pointer;
+		 }
+		   .card div{
+		   	clear:both;
+		   	 width:306px;
+		   	 height:250px;
+		   	 /*background: yellow;*/
+		   	 display: none;
+		   	 border:1px solid black;
+		   }
+		   div.active{
+		   	 display: block;
+		   }
+		   .card li.active{
+		   	background: yellow;
+		   }
+	 </style>
+
+</head>
+<body>
+	 <div class="card" id="J_card">
+		<ul class="card_title">
+			<li class="active">姓名</li>
+			<li>看过的电影</li>
+			<li>兴趣爱好</li>
+		</ul>
+		<div class="active">王楚</div>
+		<div>太多了，红海行动，疯狂的麦克斯，蝙蝠侠前传，心花路放</div>
+		<div>NBA，羽毛球，旅游，睡觉，聊天</div>
+
+	 </div>
+
+	 <script>
+	 		var oCard = document.getElementById('J_card');
+	 		var aLi   = oCard.getElementsByTagName('li');
+	 		var aDiv  = oCard.getElementsByTagName('div');
+
+	 		   for(var i=0;i<aLi.length;i++){
+	 		   				aLi[i].index=i;
+	 		   			// alert(i);
+	 		   		   aLi[i].onclick=function(){
+	 		   		   	 for(var j=0;j<aLi.length;j++){
+	 		   		   		 aLi[j].className="";
+	 		   		   		 aDiv[j].style.display="none";
+	 		   		   
+	 		   		    }
+
+	 		   		    	this.className="active";
+	 		   		    	aDiv[this.index].style.display="block";
+	 		   		    }
+	 		   }
+
+	 </script>
+</body>
+</html>
+
+ <!--  for(var i=0;i<aLi.length;i++){
+			aLi[i].index=i;
+		 aLi[i].onclick=function(){
+
+		 		for(Var j=0;j<aLi.length;j++){
+		 				aLi[j].className="";
+						aDiv[j].style.display="none";
+
+		 		}
+
+		 		  this.className="active";
+		 		  aDiv[this.index].style.display="active";
+		 }
+  }   -->
