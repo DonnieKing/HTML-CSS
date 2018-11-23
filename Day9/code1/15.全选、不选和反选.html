@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<button id="quanxuan">全选</button>
+		<button id="buxuan">不选</button>
+		<button>反选</button>
+		<div id="inputs">
+			<input type="checkbox"><br>
+			<input type="checkbox"><br>
+			<input type="checkbox"><br>
+			<input type="checkbox"><br>
+			<input type="checkbox"><br>
+			<input type="checkbox"><br>
+			<input type="checkbox"><br>
+			<input type="checkbox"><br>
+			<input type="checkbox"><br>
+			<input type="checkbox"><br>
+		</div>
+		<script>
+			//获取全选按钮元素对象
+			var oQuanxuan = document.getElementById('quanxuan');
+
+			//获取id为inputs的元素对象
+			var oInputs = document.getElementById('inputs');
+
+			var aInput = oInputs.getElementsByTagName('input');
+
+			// alert(aInput.length);
+			
+			//给全选按钮绑定鼠标点击事件，复选框全部选中
+			oQuanxuan.onclick = function(){
+				for(var i=0;i<aInput.length;i++)
+				{
+					aInput[i].checked = true;
+				}
+			}
+		</script>
+	</body>
+</html>

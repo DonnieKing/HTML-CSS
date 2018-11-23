@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习</title>
+		<style>
+			@keyframes movedown{
+				0%{background-position:0 0}
+				100%{background-position:0 -1800px}
+			}
+			@keyframes moveup{
+				0%{background-position:0 -1800px}
+				100%{background-position:0 -2850px}
+			}
+			.intro{
+				width:600px;
+				height:150px;
+				margin:60px auto;
+				background: red;
+			}
+			.intro .item{
+				width:150px;
+				height:150px;
+				float:left;
+				background: green;
+			}
+			.intro a{
+				display: block;
+			}
+			.intro .qrcode{
+				 background: url(./images/qrcode1-t.jpg) 0 0 no-repeat;
+			}
+			.intro .content{
+				width:150px;
+				height:150px;
+				cursor:pointer;
+			}
+			.intro .phone{
+				 background: url(./images/phone1-t.jpg) 0 0 no-repeat;
+			}
+			.intro .pad{
+				 background: url(./images/pad1-t.jpg) 0 0 no-repeat;
+			}
+			.intro .other{
+				 background: url(./images/other1-t.jpg) 0 0 no-repeat;
+			}
+			.active  .content{
+				background-position:0 -1800px;
+				-moz-animation:movedown .5s steps(12) forwards;
+				-webkit-animation:movedown .5s steps(12) forwards;
+			}
+			.unactive .content {
+			    -moz-animation: moveup .3s steps(7) forwards;
+			    -webkit-animation: moveup .3s steps(7) forwards;
+			}
+
+		</style>
+</head>
+<body>
+	 <div class="intro">
+		<div class="item" id="J_qrcode">
+			<a class="qrcode content" id="" href="#" ></a>
+		</div>
+		<div class="item" id="J_phone">
+			<a class="phone content" id="" href="#" ></a>
+		</div>
+		<div class="item" id="J_pad">
+			<a class="pad content" id="" href="#" ></a>
+		</div>
+		<div class="item" id="J_other">
+			<a class="other content" id="" href="#" ></a>
+		</div>
+	 </div>
+
+	 <script>
+	 		var oqrcode=document.getElementById('J_qrcode');
+		 		oqrcode.onmouseover=movedown;
+		 		 oqrcode.onmouseout=moveup;
+
+
+			var ophone=document.getElementById('J_phone');
+				ophone.onmouseover=movedown;
+				ophone.onmouseout=moveup;
+
+			var opad=document.getElementById('J_pad');
+				opad.onmouseover=movedown;
+				opad.onmouseout=moveup;
+
+			var oother=document.getElementById('J_other');
+				oother.onmouseover=movedown;
+				oother.onmouseout=moveup;
+
+	 		function movedown(){
+	 			this.className="item active";
+	 		}
+	 		function moveup(){
+	 			this.className="item unactive";
+	 		}
+	 </script>
+	
+</body>
+</html>
