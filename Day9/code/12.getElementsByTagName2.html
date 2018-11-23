@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			div{width: 200px;height: 200px;border:1px dashed green;float:left;}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<script>
+				var aDiv = document.getElementsByTagName('div');
+				// alert(aDiv);
+				// console.log(aDiv);
+				for(var i=0;i<8;i++)
+				{
+					aDiv[i].style.background = "red";
+				}
+				
+		</script>
+	</body>
+</html>
