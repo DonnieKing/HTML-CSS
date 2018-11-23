@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>操作属性的两种方式</title>
+</head>
+<body>
+	<input type="text" id="J_text">
+	<button onclick="written();">方法一</button>
+	<button onclick="written2();">方法二</button>
+	 <script>
+	 function  written(){
+	 	  document.getElementById('J_text').value='chu';
+	 }
+	 function written2(){
+	 		var name = "value";
+	 		document.getElementById('J_text')[name]="wangchu";
+	 }
+	 </script>
+</body>
+</html>
