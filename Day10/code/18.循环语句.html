@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+				//while 语句
+				
+				var i = 0;   //初始
+				while(i<4){  //条件
+					console.log(i); //语句
+					i++;            // i=i+1   //自增
+				}
+				console.log('--------------------');
+
+				//for 语句
+				for(var i=0;i<4;i++)
+				{
+					console.log(i);
+				}
+
+				//例子：求1+2+3+4+……+100？
+				var i=0,sum=0;
+				while(i<=100){
+					sum += i;
+					i++;
+				}
+				console.log(sum);
+
+				var sum = 0;
+				for(var i=0;i<=100;i++){
+					sum += i;
+				}	
+				console.log(sum);
+		</script>
+	</body>
+</html>

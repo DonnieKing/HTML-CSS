@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<form action="">
+			<input type="text" placeholder="第一个数" id="J_one">
+			+
+			<input type="text" placeholder="第二个数" id="J_two">
+			=
+			<input type="text" size="5" id="J_sum">
+			<button type="button" id="J_btn">求和</button>
+		</form>
+		<script>
+			var oOne = document.getElementById('J_one'); //获取第一个数的对象
+			var oTwo = document.getElementById('J_two'); //获取第二个数的对象
+			var oBtn = document.getElementById('J_btn'); //获取按钮的对象
+			var oSum = document.getElementById('J_sum'); //获取结果的对象
+
+			oBtn.onclick = function(){
+				var one = parseFloat(oOne.value);  //获取第一个数的值
+				var two = parseFloat(oTwo.value);  //获取第二个数的值
+				// console.log(one,two);
+				// alert(one+two);
+				var sum;
+				if(isNaN(one))
+				{
+					alert('您输入的第一个数有误！');
+				}else if(isNaN(two)){
+					alert('您输入的第二个数有误！');
+				}else{
+					sum = one + two;
+					// alert(sum);
+					oSum.value = sum;
+				}
+			}
+		</script>
+	</body>
+</html>

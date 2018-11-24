@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>简易计算器练习</title>
+</head>
+<body>
+	<form action="">
+		<input type="text" placeholder="请输入第一个数" id="J_numone">
+		<select id="J_operator">
+		<option value="+">+</option>
+		<option value="-">-</option>
+		<option value="*">*</option>
+		<option value="/">/</option>
+		</select>
+		<input type="text" placeholder="请输入第二个数" id="J_numtwo">
+		=
+		<input type="text" size="6" id="J_result">
+		<button type="button" id="J_btn">计算</button>
+	</form>
+
+		<script>
+				var  operator="+";
+				var oNumber=document.getElementById('J_numone');
+				var oNumtwo=document.getElementById('J_numtwo');
+				var oOperator=document.getElementById('J_operator');
+				var oResult=document.getElementById('J_result');
+				var oBtn=document.getElementById('J_btn');
+
+				oOperator.onchange=function(){
+					operator=this.options[this.selectedIndex].value;
+					 // alert(operator);
+				}
+
+				oBtn.onclick=function(){
+					  var iNumone=parseFloat(oNumber.value);
+					  var iNumtwo=parseFloat(oNumtwo.value);
+					  var sum=0;
+					  if(isNaN(iNumone)  || isNaN(iNumtwo)){
+					  		alert('您输入的值有误');
+					  		return;
+					  } 
+					    switch(operator){
+					    	case "+":
+					    			sum= iNumone + iNumtwo;
+					    			break;
+					    	case "-":
+					    			sum= iNumone - iNumtwo;
+					    			break;
+					    	case "*":
+					    			sum= iNumone * iNumtwo;
+					    			break;
+					    	case "/":
+					    			if(!iNumtwo){
+					    				alert("除数不能为0");
+					    				return;
+					    			}
+					    			sum= iNumone / iNumtwo;
+					    			break;
+					    }
+					        oResult.value=sum;
+				}
+
+
+
+		</script>
+	
+</body>
+</html>

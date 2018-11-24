@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 闭包：子函数可以使用父函数的局部变量
+			function a(){
+				var name = "jayjun";  
+
+				function b(){
+					console.log(name);
+				}
+
+				b();
+			}
+
+			a();
+			
+		</script>
+	</body>
+</html>

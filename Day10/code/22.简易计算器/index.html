@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<form action="">
+			<input type="text" placeholder="请输入第一个数" id="J_numone">
+			<select name="" id="J_operator">
+				<option value="+">+</option>
+				<option value="-">-</option>
+				<option value="*">*</option>
+				<option value="/">/</option>
+			</select>
+			<input type="text" placeholder="请输入第二个数" id="J_numtwo">
+			=
+			<input type="text" size="5" id="J_result">
+			<button type="button" id="J_btn">计算</button>
+			<script>
+				var operator = "+";
+				var oNumone = document.getElementById('J_numone'); //获取第一个数元素对象
+				var oNumtwo = document.getElementById('J_numtwo'); //获取第二个数元素对象
+
+				var oBtn = document.getElementById('J_btn'); //获取计算按钮元素对象
+
+				var oOperator = document.getElementById('J_operator'); //获取下拉框元素对象
+
+				var oResult = document.getElementById('J_result'); //获取存储计算结果的元素对象
+
+				//为下拉框绑定onchange事件
+				oOperator.onchange = function(){
+					// alert('ok');
+					// alert(this.selectedIndex);
+					operator = this.options[this.selectedIndex].value; //获取下拉框选中的当前下拉列表项的value属性值
+					// alert(operator);
+				}
+
+				//为计算按钮绑定鼠标点击onclick事件 
+				oBtn.onclick = function(){
+
+					var sum = 0;
+					var iNumone = parseFloat(oNumone.value); 
+					var iNumtwo = parseFloat(oNumtwo.value); 
+
+					// console.log(iNumone,iNumtwo);
+					if(isNaN(iNumone) || isNaN(iNumtwo))
+					{
+						alert("您输入的数字有误！");
+						return;
+					}
+
+					// alert(operator);
+					switch(operator)
+					{	
+						case "+":
+							sum = iNumone + iNumtwo;
+							break;
+						case "-":
+							sum = iNumone - iNumtwo;
+							break;
+						case "*":
+							sum = iNumone * iNumtwo;
+							break;
+						case "/":
+							if(!iNumtwo)
+							{
+								alert("除数不能为0！");
+								return;
+							}
+							sum = iNumone / iNumtwo;
+							break;
+					}
+					// alert(sum);
+					oResult.value = sum;
+				}
+			</script>
+		</form>
+	</body>
+</html>

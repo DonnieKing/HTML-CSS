@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			function a(){
+				var name = "jayjun";   //局部变量：只能在函数内部使用
+				console.log('a:'+name);
+			}
+
+			function b(){
+				console.log(name);
+			}
+
+			a();
+			b();
+		</script>
+	</body>
+</html>
