@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		table{
+			width:400px;
+			height:300px;
+			border:1px solid blue;
+			border-collapse: collapse;
+		}
+		th,tr{
+			border:1px solid blue;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	 <table id="table">
+	 	<tr>
+			<th>姓名</th>
+			<th>数学</th>
+			<th>英语</th>
+			<th>语文</th>
+		</tr>
+		<tr>
+			<th>小明</th>
+			<th>45</th>
+			<th>63</th>
+			<th>33</th>
+		</tr>
+		<tr>
+			<th>小白</th>
+			<th>66</th>
+			<th>33</th>
+			<th>46</th>
+		</tr>
+		<tr>
+			<th>小王</th>
+			<th>16</th>
+			<th>45</th>
+			<th>54</th>
+		</tr>
+	 </table>
+
+	  <script>
+	  		var oTable= document.getElementById('table');
+	  		var aTr  = oTable.getElementsByTagName('tr');
+
+	  		  console.log(aTr);
+	  		    for(var i=0; i<aTr.length;i++){
+	  		    	  if(i%2==0){
+	  		    	  	 aTr[i].style.background="#FFcccc";
+	  		    	  }
+	  		    	  else{
+	  		    	  	aTr[i].style.background="red";
+	  		    	  }
+	  		    }
+	  </script>
+</body>
+</html>
+
+  <!--  var oTable=document.getElementById('table');
+   var aTr= oTable.getElementsByTagName('tr');
+   for(var i=0;i<aTr.length;i++){
+    	if(i%2==0){
+    		aTr[i].style.background="blue";
+    	}else{
+    		aTr[i].style.background="yellow";
+    	}
+   } -->
