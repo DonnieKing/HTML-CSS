@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	 <form action="">
+		<input type="text" placeholder="第一个数" id="J_one">
+		*
+		<input type="text" placeholder="第二个数" id="J_two">
+		=
+		<input type="text" size="5" id="J_sum"> 
+		<button type="button"  id="J_btn">求和</button>
+	 </form>
+	 <script>
+	 		var oOne=document.getElementById('J_one');
+	 		var oTwo=document.getElementById('J_two');
+	 		var oBtn=document.getElementById('J_btn');
+	 		var oSum=document.getElementById('J_sum');
+ 
+	 		 // var one= parseFloat(oOne.value);
+	 		 // var two=parseFloat(oTwo.value);
+	 		 
+
+	 		  oBtn.onclick=function(){
+	 		   var one= parseFloat(oOne.value);
+	 		   var two=parseFloat(oTwo.value);
+
+	 		  	 if(isNaN(one)){
+	 		  	 	 alert('您输入的第一个数有误');
+	 		  	 }else if(isNaN(two)){
+	 		  	 	alert('您输入的第二个数有误');
+	 		  	 }else{
+ 		  	 		var sum=one * two ;
+ 		  	 	    oSum.value = sum;
+	 		  	 }
+	 		  }
+	 </script>
+
+</body>
+</html>
+
+
+<!--   oBtn.onclick=function(){
+  		var one=parseFloat(oOne.value);
+  		var two=parseFloat(oTwo.value);
+       if(isNaN(one)){
+        	alert('输入的有误');
+       }
+       else if(isNaN(two)){
+       		alert('输入的有误');
+       }
+       else{
+       		var sum=one+two;
+       		oSum.value=sum;
+       }
+  } -->
+
+
+
+  <!-- oBtn.onclick=function(){
+  		var one=parseFloat(oOne.value);
+  		var two=parseFloat(oTwo.value);
+  		if(isNaN(one)){
+  			alert("有错");
+  		}
+  		elase if(isNaN(two)){
+			alert("有错");
+  		} 
+  		else{
+  			var sum=one+two;
+  			oSum.value=sum;
+  		}
+  }     -->
