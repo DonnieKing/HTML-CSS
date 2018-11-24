@@ -1,0 +1,86 @@
+<!DOCTYPE html> 
+<html> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <title></title> 
+  <style type="text/css"> 
+   .box{ 
+    width: 400px; 
+    height: 450px; 
+    margin: 0 auto; 
+    background: pink; 
+   } 
+   .show{ 
+    width:100%; 
+    height: 100px; 
+    line-height: 100px; 
+    text-align: right; 
+    background: #FFFFFF; 
+    border:1px solid #000; 
+   } 
+   .operate{ 
+    width: 100%; 
+    height: 250px; 
+    margin-top: 50px; 
+   } 
+   p{ 
+    margin-top: 20px; 
+    text-align: center; 
+   } 
+   input{ 
+    width: 80px; 
+    height: 40px; 
+    /*margin-left: 50px;*/ 
+    text-align: center; 
+   } 
+   input:nth-child(5n),input:first-child{ 
+    margin-left: 0; 
+   } 
+  </style> 
+ </head> 
+ <body> 
+  <div class="box"> 
+   <div class="show" id="show"></div> 
+   <div class="operate"> 
+    <p> 
+     <input type="button" name="one" id="one" value="1" onclick="num(1)"/> 
+     <input type="button" name="two" id="two" value="2" onclick="num(2)"/> 
+     <input type="button" name="three" id="three" value="3" onclick="num(3)"/> 
+     <input type="button" name="plus" id="plus" value="+" onclick="num('+')"/> 
+    </p> 
+    <p> 
+     <input type="button" name="four" id="four" value="4" onclick="num(4)"/> 
+     <input type="button" name="five" id="five" value="5" onclick="num(5)"/> 
+     <input type="button" name="six" id="six" value="6" onclick="num(6)"/> 
+     <input type="button" name="reduce" id="reduce" value="-" onclick="num('-')"/> 
+    </p> 
+    <p> 
+     <input type="button" name="seven" id="seven" value="7" onclick="num(7)"/> 
+     <input type="button" name="eight" id="eight" value="8" onclick="num(8)"/> 
+     <input type="button" name="nine" id="nine" value="9" onclick="num(9)"/> 
+     <input type="button" name="times" id="times" value="x" onclick="num('*')"/> 
+    </p> 
+    <p> 
+     <input type="button" name="divide" id="divide" value="/" onclick="num(/)"/> 
+     <input type="button" name="zero" id="zero" value="0" onclick="num(0)"/> 
+     <input type="button" name="equal" id="equal" value="=" onclick="equal()"/> 
+     <input type="button" name="mod" id="mod" value="%" onclick="num('%')"/> 
+    </p> 
+   </div>  
+       
+  </div> 
+ </body> 
+ <script type="text/javascript"> 
+  function num(figure){ 
+//   var figure = figure.toString(); 
+   var show = document.getElementById("show"); 
+   showNum = show.innerHTML+figure; 
+   show.innerHTML = showNum; 
+  } 
+  function equal(){ 
+   document.getElementById("show").innerHTML = eval(document.getElementById("show").innerHTML); 
+   /*var lal = document.getElementById("show").innerHTML; 
+   alert(lal);*/ 
+  } 
+ </script> 
+</html>
