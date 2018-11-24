@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+ 		<script>  
+ 				function a(){     //闭包就是子函数可以使用父函数的局部变量
+ 					var name="wangchu"; //在函数外调用a函数，在a函数里调用 b()函数
+ 					function b(){
+ 						console.log(name);
+ 					}
+ 					 b();
+ 				}
+ 				 a();
+ 		</script>
+	
+</body>
+</html>
