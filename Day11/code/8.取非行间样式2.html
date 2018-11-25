@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#div1{
+				 width: 100px;height: 100px;background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<script>
+			
+
+			var oDiv1 = document.getElementById("div1");
+			//alert(oDiv1.currentStyle); //undefined
+			
+			//复合样式：background、border等
+			//单一样式：width、height等
+
+			// alert(getStyle(oDiv1,"background"));
+			
+			alert(getStyle(oDiv1,"width"));
+
+			//取非行间样式（不能设置），并且只能获取单一样式
+			function getStyle(obj,name)
+			{
+				if(obj.currentStyle)
+				{
+					//IE: currentStyle.属性名
+					return obj.currentStyle[name];
+				}
+				else
+				{
+					//FF|chrome|QQ  getComputedStyle(obj, false).属性名
+					return getComputedStyle(obj, false)[name];			
+				}
+			}
+
+
+
+		</script>
+	</body>
+</html>

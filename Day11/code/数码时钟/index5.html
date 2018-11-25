@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			body{background: #000;color:#FFF;font-size: 50px;}
+		</style>
+	</head>
+	<body>
+		<div id="clock">
+			<img src="./images/0.png">
+			<img src="./images/0.png">
+			:
+			<img src="./images/0.png">
+			<img src="./images/0.png">
+			:
+			<img src="./images/0.png">
+			<img src="./images/0.png">
+		</div>
+		<script>
+			function toDouble(n){
+				if(n < 10)
+				{
+					return '0' + n;
+				}
+				else
+				{
+					return '' + n;
+				}
+			}
+
+			function clock(){
+
+				var oDate = new Date();
+
+				var str = toDouble(oDate.getHours()) + toDouble(oDate.getMinutes()) + toDouble(oDate.getSeconds());
+
+				for(var i=0;i<str.length;i++)
+				{
+
+					aImg[i].src = "./images/"+str[i]+".png";
+				}
+
+			}
+
+			var oClock = document.getElementById('clock');
+			var aImg = oClock.getElementsByTagName('img');
+
+			clock();  //解决打开页面默认显示一排0的问题
+			setInterval(clock,1000);
+		</script>
+	</body>
+</html>

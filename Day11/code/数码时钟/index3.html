@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			body{background: #000;color:#FFF;font-size: 50px;}
+		</style>
+	</head>
+	<body>
+		<div id="clock">
+			<img src="./images/1.png">
+			<img src="./images/6.png">
+			:
+			<img src="./images/5.png">
+			<img src="./images/7.png">
+			:
+			<img src="./images/5.png">
+			<img src="./images/6.png">
+		</div>
+		<script>
+			function toDouble(n){
+				if(n < 10)
+				{
+					return '0' + n;
+				}
+				else
+				{
+					return '' + n;
+				}
+			}
+
+			var oClock = document.getElementById('clock');
+			var aImg = oClock.getElementsByTagName('img');
+			// console.log(aImg);
+
+			var oDate = new Date();
+			// getHours、getMinutes、getSeconds
+ 			// console.log(oDate.getHours(),oDate.getMinutes(),oDate.getSeconds());
+
+			var str = toDouble(oDate.getHours()) + toDouble(oDate.getMinutes()) + toDouble(oDate.getSeconds());
+			// console.log(typeof str,str);
+			
+			// console.log(str.length);
+			for(var i=0;i<str.length;i++)
+			{
+				// console.log(str[i]);
+				aImg[i].src = "./images/"+str[i]+".png";
+			}
+
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#div1{
+				 width: 100px;height: 100px;background: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<script>
+			
+			var oDiv1 = document.getElementById("div1");
+			//alert(oDiv1.currentStyle); //undefined
+
+			if(oDiv1.currentStyle)
+			{
+				//IE: currentStyle.属性名
+				console.log(oDiv1.currentStyle.width);
+			}
+			else
+			{
+				//FF  getComputedStyle(obj, false).属性名
+				console.log(getComputedStyle(oDiv1, false).width);			
+			}
+
+		</script>
+	</body>
+</html>
