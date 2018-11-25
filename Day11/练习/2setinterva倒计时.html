@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body> 
+     <a href="" id="time">10</a>秒后自动跳转.....
+
+     <script>
+     function countDown(){
+     	  var oTime = document.getElementById('time');
+     	  var seconds = parseInt(oTime.innerText);
+     	  seconds--;
+     	  oTime.innerText = seconds ;
+     	  if(seconds==0){
+     	  	window.location.href="Http://www.baidu.com";
+     	  }
+
+     	 }
+     	   setInterval(countDown,1000);
+     </script>
+	
+</body>
+</html>
