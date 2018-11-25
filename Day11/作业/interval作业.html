@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>interval</title>
+</head>
+<body>
+	 <a href="" id="seconds">10</a>秒后跳转到首页...
+
+	 <script>
+
+	 	 // function countDown(){
+	 	 // 	var oSeconds=document.getElementById('seconds');
+	 	 // 	var seconds=parseInt(oSeconds.innerText);	 	 
+	 	 //   seconds--;
+	 	 //    // setInterval(countDown,1000);
+	 	 //   if(seconds>0){
+	 	 //   	   oSeconds.innerText=seconds;
+	 	 //   	    setInterval(countDown,1000);
+	 	 //   	   console.log(oSeconds.innerText);
+	 	 //   }else{
+	 	 //   		window.location.href="Http://www.baidu.com";
+	 	 //   }
+	 	 //    setInterval(countDown,1000);
+
+
+	 	    setInterval(function(){
+	 	    	var oSeconds=document.getElementById('seconds');
+	 	    	var seconds=parseInt(oSeconds.innerText);
+	 	    	seconds--;
+	 	    	oSeconds.innerText=seconds;
+	 	    	if(seconds==0){
+	 	    		window.location.href="Http://www.baidu.com";
+	 	    	}
+
+	 	    },1000);
+
+	 </script>
+</body>
+</html>

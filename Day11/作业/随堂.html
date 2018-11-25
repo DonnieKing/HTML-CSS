@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	 <form action="">
+		<input type="text" id="J_numone">
+		<input type="text" id="J_numtwo"><button id="J_btn" type="button">计算</button><br>
+		加:<input type="text" id="J_numthree"><br>
+		减:<input type="text" id="J_numfour"><br>
+		乘:<input type="text" id="J_numfive"><br>
+		除:<input type="text" id="J_numsix">
+	 </form>
+	 <script>
+	 var oNumone = document.getElementById('J_numone');
+	 var oNumtwo = document.getElementById('J_numtwo');
+	 var oNumthree = document.getElementById('J_numthree');
+	 var oNumfour = document.getElementById('J_numfour');
+	 var oNumfive = document.getElementById('J_numfive');
+	 var oNumsix = document.getElementById('J_numsix');
+	 var oBtn  =  document.getElementById('J_btn');
+
+	  	 var sum=0;
+	  	 // var iNumone = parseFloat(oNumone.value);
+	  	 // var iNumtwo = parseFloat(oNumtwo.value);
+
+	  	  oBtn.onclick= function(){
+	  	  var iNumone = parseFloat(oNumone.value);
+	  	 var iNumtwo = parseFloat(oNumtwo.value);
+	  	  	 if(isNaN(iNumone) || isNaN(iNumtwo)){
+	  	  	 	 alert('您输入的数有误，请重新输入');
+	  	  	 	 return ;
+	  	  	 }  else{
+	  	  	   console.log(iNumone+iNumtwo);
+	  	  	   oNumthree.value = iNumone + iNumtwo;
+	  	  	   oNumfour.value = iNumone - iNumtwo;
+	  	  	   oNumfive.value = iNumone * iNumtwo;
+
+	  	  	    if(!iNumtwo){
+	  	  	    	alert('除数不能为0');
+	  	  	    }else{
+	  	  	   oNumsix.value = iNumone / iNumtwo;
+	  	  	}
+	  	  	   }
+	  	  }
+	 </script>
+</body>
+</html>

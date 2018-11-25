@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+        <head>
+            <meta charset="utf-8" />
+            <title>超酷数码钟表 - 慕课吧 - www.moocba.com</title>
+            <link rel="stylesheet" type="text/css" href="css/style.css"  />
+        </head>
+        <body>
+        <div id="clock" class="date">
+                    <h2><img src="images/title.png" /></h2>
+                    <div class="year">
+                            <img class="num" src="images/0.png" alt="0" />
+                            <img class="num" src="images/0.png" alt="0" />
+                            <img class="num" src="images/0.png" alt="0" />
+                            <img class="num" src="images/0.png" alt="0" />
+                            <img src="images/year.png" alt="year" />
+                            <img class="num" src="images/0.png" alt="0" />
+                            <img class="num" src="images/0.png" alt="0" />
+                            <img src="images/month.png" alt="month" />
+                            <img class="num" src="images/0.png" alt="0" />
+                            <img class="num" src="images/0.png" alt="0" />
+                            <img src="images/seven.png" alt="seven" />
+                    </div>
+                    <div class="time">
+                            <img class="num" src="images/0.png" alt="0" />
+                            <img class="num" src="images/0.png" alt="0" />
+                            <img src="images/sign.png" alt="sign" />
+                            <img class="num" src="images/0.png" alt="0" />
+                            <img class="num" src="images/0.png" alt="0" />
+                            <img src="images/sign.png" alt="sign" />
+                            <img class="num" src="images/0.png" alt="0" />
+                            <img class="num" src="images/0.png" alt="0" />
+                            <img class="pos2" src="images/week.png" alt="week" />
+                            <img class="num2" src="images/one.png" alt="one" />
+                    </div>
+                    <div class="url" title="慕课吧-超酷时钟">
+                            <a href="http://www.moocba.com/" target="_blank"><img src="images/logo.png" alt="慕课吧" /></a>
+                    </div>
+            </div>
+
+
+            <script>
+                
+               var oClock = document.getElementById('clock');
+               var aImg  =  oClock.getElementsByTagName('img');
+                 
+                  
+
+               function toDouble(n){
+                    if(n<10){
+                        return "0" + n ;
+                    }else{
+                        return "" +n ;
+                    }
+               }
+
+                  function clock(){
+                      var oDate = new Date();
+                      var str="."+toDouble(oDate.getFullYear())+"."+toDouble(oDate.getMonth()+1)+"."+toDouble(oDate.getDate())+"."+toDouble(oDate.getHours())+"."+toDouble(oDate.getMinutes())+"."+toDouble(oDate.getSeconds());
+                      // console.log(str[18]);
+                      
+                      for(var j=1;j<20;j++){
+                               if(aImg[j].className=="num") {               
+                            aImg[j].src = "./images/"+str.charAt(j)+".png";
+
+                  } else{
+                        continue;
+                  }
+                  }
+
+
+                    var str2 = oDate.getDay();
+                    console.log(str2);
+                    switch(str2){
+                        case  0:
+                                aImg[21].src= "./images/seven.png";
+                                break;
+                        case 1:
+                                aImg[21].src="./images/one.png";
+                                break;
+                        case 2:
+                                aImg[21].src="./images/two.png";
+                                break;
+                        case 3:
+                                aImg[21].src="./images/three.png";
+                                break;
+                        case 4:
+                                aImg[21].src="./images/four.png";
+                                break;
+                        case 5:
+                                aImg[21].src="./images/five.png";
+                                break;
+                        case 6:
+                                aImg[21].src="./images/six.png";
+                                break;
+                    }
+
+                }
+              
+                  clock();
+                  setInterval(clock,1000);
+
+            </script>
+        </body>
+</html>

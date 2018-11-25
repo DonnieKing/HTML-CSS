@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <title>JavaScript简易日历</title>
+                <link  rel="stylesheet" type="text/css" href="style1.css" />
+        </head>
+        <body>
+                <div id="tab" class="calendar">
+                        <ul>
+                                <li class="active"><h2>1</h2><p>JAN</p></li>
+                                <li><h2>2</h2><p>FER</p></li>
+                                <li><h2>3</h2><p>MAR</p></li>
+                                <li><h2>4</h2><p>APR</p></li>
+                                <li><h2>5</h2><p>MAY</p></li>
+                                <li><h2>6</h2><p>JUN</p></li>
+                                <li><h2>7</h2><p>JUL</p></li>
+                                <li><h2>8</h2><p>AUG</p></li>
+                                <li><h2>9</h2><p>SEP</p></li>
+                                <li><h2>10</h2><p>OCT</p></li>
+                                <li><h2>11</h2><p>NOV</p></li>
+                                <li><h2>12</h2><p>DEC</p></li>
+                        </ul>
+                        
+                        <div class="text">
+                                <h2>1月活动</h2>
+                                <p>快过年了，大家可以商量着去哪玩吧～</p>
+                        </div>
+                        <div >
+                                <h2>2月活动</h2>
+                                <p>过年了，大家一起去玩吧～</p>
+                        </div>
+                        <div >
+                                <h2>3月活动</h2>
+                                <p>年过了，大家一起学习吧～</p>
+                        </div>
+                        <div>
+                                <h2>4月活动</h2>
+                                <p>上课了，大家一起努力吧～</p>
+                        </div>
+                        <div >
+                                <h2>5月活动</h2>
+                                <p>快考试了，大家一起复习吧～</p>
+                        </div>
+                        <div >
+                                <h2>6月活动</h2>
+                                <p>考试完了，大家一起放松吧～</p>
+                        </div>
+                        <div >
+                                <h2>7月活动</h2>
+                                <p>放暑假了，大家一起回家吧～</p>
+                        </div>
+                        <div >
+                                <h2>8月活动</h2>
+                                <p>假期了，大家一起去游泳吧～</p>
+                        </div>
+                        <div >
+                                <h2>9月活动</h2>
+                                <p>开学了，大家一起回学校吧～</p>
+                        </div>
+                        <div >
+                                <h2>10月活动</h2>
+                                <p>放国庆了，大家一起去旅游吧～</p>
+                        </div>
+                        <div >
+                                <h2>11月活动</h2>
+                                <p>冬天了，大家一起好好保暖吧～</p>
+                        </div>
+                        <div >
+                                <h2>12月活动</h2>
+                                <p>快过年了，大家一起享受乐趣吧～</p>
+                        </div>
+            </div>
+
+            <script>
+                    var oTab  = document.getElementById('tab');
+                    var aLi  =  oTab.getElementsByTagName('li');
+                    var aDiv = oTab.getElementsByTagName('div');
+
+                     for(var i=0;i<aLi.length;i++){
+
+                          aLi[i].index=i;
+                          
+                          aLi[i].onmouseover=function(){
+                            
+                            for(var j=0;j<aLi.length;j++){
+                                     
+                             aLi[j].className="";
+
+                             aDiv[j].style.display="none";
+                          }
+
+                           this.className = 'active';
+                           aDiv[this.index].style.display='block';
+                            aDiv[this.index].className='text';
+                            console.log(this.index);
+                     }
+                 }
+            </script>
+</body>
+</html>

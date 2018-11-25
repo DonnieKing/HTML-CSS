@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hao123</title>
+	<style>
+		.box{
+			margin:100px;
+		}
+
+		#box1{
+			cursor: pointer;
+			float:left;
+			width:80px;
+			height:172px;
+			/*background: red;*/
+			margin-right: 30px;
+		}
+		#box2{
+			float:left;
+			width:448px;
+			height:307px;
+			/*background: green;*/
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+	 <div id="box1"><img src="./images/hao123.png">
+	 </div>
+	 <div id="box2"><img src="./images/hao1234.png" >
+	 </div>
+	 </div>
+
+	 <script>
+	 	var timer=null;
+	 	 var oBox1 = document.getElementById('box1');
+	 	 var oBox2= document.getElementById('box2');
+
+	 	 oBox1.onmouseover=function(){
+	 	 	 clearTimeout(timer);
+	 	 	setTimeout(function(){
+	 	 		oBox2.style.display="block";
+	 	 	},100);
+	 	 }
+
+	 	 oBox1.onmouseout=function(){
+	 	 	  timer= setTimeout(function(){
+	 	 	   	oBox2.style.display="none";
+	 	 	   },100);
+	 	 }
+	 	  oBox2.onmouseover=function(){
+	 	  	  clearTimeout(timer);
+	 	  }
+	 	  oBox2.onmouseout=function(){
+	 	  	  timer = setTimeout(function(){
+	 	  	  	oBox2.style.display="none";
+	 	  	  },100)
+	 	  }
+	 </script>
+</body>
+</html>
