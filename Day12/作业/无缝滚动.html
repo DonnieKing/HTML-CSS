@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		.box{
+			width:712px;
+			height:134px;
+			background: red;
+			margin:100px auto;
+			position: relative;
+			overflow: hidden;
+			cursor:pointer;
+		}
+		.box ul{
+			position: absolute;
+			top:0;
+			left:0;
+			list-style: none;
+		}
+		.box li{
+			float:left;
+			width:178px;
+			height:134px;
+		}
+		.btnone{
+			cursor: pointer;
+			width:70px;
+			height:68px;
+			background:  url(./images/btn.jpg) no-repeat 0 0;
+			position: absolute;
+			top:155px;
+			left:300px;
+		}
+		.btntwo{
+			cursor: pointer;
+			width:70px;
+			height:68px;
+			background:  url(./images/btn.jpg) no-repeat -70px 0;
+			position: absolute;
+			top:155px;
+			right:300px;
+		}
+		#operator{
+			display: block;
+			 width:80px;
+			 height:30px;
+			 margin:10px auto;
+		}
+	</style>
+</head>
+<body>	
+		<select id="operator">
+		<option value="one" id="operatorone">较快</option>
+		<option value="two" id="operatortwo">匀速</option>
+		<option value="three" id="operatorthree">较慢</option>
+		</select>
+		
+		<div class="btnone" id="J_btnone"></div>
+		<div class="btntwo" id="J_btntwo"></div>
+
+<!-- 		<a href="javascript:;" id="left">向左</a> 	
+	 	<a href="javascript:;" id="right">向右</a> -->
+	 
+	 <div class="box" id="J_box">
+		<ul>
+			<li><img src="./images/1.jpg" ></li>
+			<li><img src="./images/2.jpg" ></li>
+			<li><img src="./images/3.jpg" ></li>
+			<li><img src="./images/4.jpg" ></li>
+		</ul>
+		<div class="btnone" id="J_btnone"></div>
+		<div class="btntwo" id="J_btntwo"></div>
+	 </div>
+
+	 <script>
+	 	var oBox = document.getElementById('J_box');
+	 	var oUl = oBox.getElementsByTagName('ul')[0];
+	 	var aLi = oUl.getElementsByTagName('li');
+	 	var oLeft = document.getElementById('left');
+	 	var oRight = document.getElementById('right');
+	 	var speed = 2 ;
+
+
+	 	 oUl.innerHTML += oUl.innerHTML; //赋值一份
+		 oUl.style.width = aLi[0].offsetWidth * aLi.length + "px";
+
+	 	 var timer = setInterval(move,30);
+
+
+ 			
+ 		 oBox.onmouseover = function(){
+ 		 	  clearInterval(timer);
+ 		 }
+ 		 oBox.onmouseout = function(){
+ 		 	  timer =  setInterval(move,30);
+ 		 }
+
+
+	 	 function move(){
+
+	 	 		if(oUl.offsetLeft>0){
+	 	 			
+	 	 			oUl.style.left = -oUl.offsetWidth/2 + "px" ;
+	 	 		}
+	 	 		if(oUl.offsetLeft< -oUl.offsetWidth/2 ){
+	 	 			
+	 	 			oUl.style.left = 0;
+	 	 		}
+	 	 		  oUl.style.left = oUl.offsetLeft + speed + "px" ;
+	 	 		  // console.log(oUl.style.left);
+	 	 }
+
+       
+            var oBtnone = document.getElementById('J_btnone');
+            var oBtntwo = document.getElementById('J_btntwo');
+
+             oBtnone.onmouseover = function(){
+             	 speed = 2;
+             }
+
+             oBtntwo.onmouseover = function(){
+             	 speed = -2;
+             }
+
+
+             var oOperator= document.getElementById('operator');
+              oOperator.onchange=function(){
+              	 operator = this.options[this.selectedIndex].value;
+              
+
+             switch(operator){
+
+             	  case "one":
+             	   			 speed = 6;
+             	   			 break;
+             	   case "two":
+             	   			 speed = 2;
+             	   			 break;
+             	   	case "three":
+             	   			 speed = 1;
+             	   			 break;
+             }
+         }
+
+	 </script>
+</body>
+</html>
