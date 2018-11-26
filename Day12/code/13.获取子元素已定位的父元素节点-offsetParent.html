@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#box1{width: 200px;height: 200px;background: red;position: relative;}
+			#box2{width: 100px;height: 100px;background: green;position: absolute;top:50px;left: 50px;}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+			<div id="box2"></div>
+		</div>
+		<script>
+			var oBox2 = document.getElementById("box2");
+			alert(oBox2.offsetParent);  
+		</script>
+	</body>
+</html>

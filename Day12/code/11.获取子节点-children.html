@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li>111111</li>
+			<li>222222</li>
+			<li>333333</li>
+		</ul>
+		<script>
+			var oUl = document.getElementById('ul1');
+
+			var ali = oUl.children;
+
+			console.log(ali);
+
+			for(var i=0;i<ali.length;i++){
+				ali[i].style.background = "red";
+			}
+
+		</script>
+	</body>
+</html>

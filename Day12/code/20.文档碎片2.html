@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<ul id="ul"></ul>
+		<script>
+			var oUl = document.getElementById("ul");
+			
+			//先创建一个文档碎片
+			var oFrag = document.createDocumentFragment();
+
+			for(var i=0;i<=10000;i++)
+			{
+				var oLi = document.createElement("li");
+				oFrag.appendChild(oLi); //将li元素先保存在文档碎片中
+			}
+
+			oUl.appendChild(oFrag);//最后一次性添加到ul元素中
+
+		</script>
+	</body>
+</html>

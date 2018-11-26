@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<img src="./images/xiaomayun.jpg" title="草" id="img">
+		<div>
+			<button id="get">获取图片标题</button>
+			<button id="change">更换图片</button>
+		</div>
+		<script>
+			 var oGet = document.getElementById("get");
+			 var oChange = document.getElementById("change");
+			 var oImg = document.getElementById("img");
+
+			 oGet.onclick = function(){
+			 	// console.log(oImg.title);
+			 	console.log(oImg.getAttribute("title"));
+
+			 }
+
+			 oChange.onclick = function(){
+			 	oImg.setAttribute("src","https://www.baidu.com/img/bd_logo1.png");
+			 }
+		</script>
+	</body>
+</html>

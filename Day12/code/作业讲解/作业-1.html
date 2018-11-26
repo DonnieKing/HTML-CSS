@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//定义一个函数求任意两个数的加减乘除。
+		function js(a,b,expr="+")
+		{
+			switch(expr){
+				case "+":
+					return a + b;
+					break;
+				case "-":
+					return a - b;
+					break;
+				case "*":
+					return a * b;
+					break;
+				case "/":
+					if(b==0)
+					{
+						return;
+					}
+					return a / b;
+					break;
+			}
+		}
+
+		console.log(js(235,9,"/"));
+		console.log(js(235,0,"/"));
+		console.log(js(235,3));
+		console.log(js(235,3,"-"));
+	</script>
+</body>
+</html>

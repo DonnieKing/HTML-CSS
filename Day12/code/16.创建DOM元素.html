@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<input type="text" id="name">
+		<input type="submit" value="添加" id="btn">
+		<ul id="ul"></ul>
+		<script>
+			 var oBtn = document.getElementById("btn");
+			 var oName = document.getElementById("name");
+			 var oUl = document.getElementById("ul");
+
+			 oBtn.onclick = function(){
+			 	var sName = oName.value;
+			 	// console.log(sName);
+			 	var oLi = document.createElement('li'); //创建一个li元素
+			 	// console.log(oLi);
+			 	oLi.innerHTML = sName + " <a href='javascript:;'>删除</a>";
+			 	// console.log(oLi);
+			 	
+			 	oUl.appendChild(oLi);
+			 }
+		</script>
+	</body>
+</html>

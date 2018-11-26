@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li>1</li> 
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<button id="down">下移</button>
+		<button id="up">上移</button>
+		<script>
+
+			var oUl1 = document.getElementById("ul1");
+
+			var oDown = document.getElementById("down");
+
+			var oUp =document.getElementById('up');
+
+			oDown.onclick = function(){
+				var oLi = oUl1.children[0];
+				oUl1.appendChild(oLi);
+			}
+
+			oUp.onclick = function(){
+				 var ooLi = oUl1.children[3];
+				 oUl1.insertBefore(ooLi,oUl1.children[0]);
+			}
+			
+		</script>	
+	</body>
+</html>

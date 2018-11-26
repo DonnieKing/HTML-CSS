@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			.left{
+				width: 200px;
+				height: 200px;
+				float: left;
+				border:1px solid #666;
+			}
+
+			.middle{
+				width: 80px;
+				float: left;
+				height: 200px;
+				border:1px solid #666;
+			}
+			.right{
+				width: 200px;
+				height: 200px;
+				float: left;
+				border:1px solid #666;
+			}			
+		</style>
+	</head>
+	<body>
+		<div class="left">		
+			<ul id="ul1">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+		</div>
+		<div class="middle">
+			<p><button id="rightMove">右移</button></p>
+			<p><button>左移</button></p>
+		</div>
+		<div class="right">		
+			<ul id="ul2">
+
+			</ul>
+		</div>	
+		<script>
+
+			var oUl1 = document.getElementById("ul1");
+
+			var oUl2 = document.getElementById("ul2");
+
+			var oRightMove = document.getElementById("rightMove");
+
+			oRightMove.onclick = function(){
+				var oLi = oUl1.children[0];
+				oUl1.removeChild(oLi);
+				oUl2.appendChild(oLi);
+			}
+		</script>	
+	</body>
+</html>

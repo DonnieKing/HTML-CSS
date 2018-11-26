@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<ul id="ul"></ul>
+		<script>
+			var oUl = document.getElementById("ul");
+			
+			for(var i=0;i<=10000;i++)
+			{
+				var oLi = document.createElement("li");
+				oUl.appendChild(oLi);
+			}
+		</script>
+	</body>
+</html>

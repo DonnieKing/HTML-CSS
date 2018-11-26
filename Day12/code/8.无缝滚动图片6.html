@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			*{padding: 0;margin: 0;}
+			#div1 {width: 712px;height: 134px;margin: 100px auto;position: relative;overflow: hidden;cursor: pointer;}
+			#div1 ul{position: absolute;left:0;top:0;}
+			#div1 ul li {list-style: none;float: left;width: 178px;height: 134px;}
+		</style>
+	</head>
+	<body>
+		<a href="javascript:;" id="left">向左走</a>
+		<a href="javascript:;" id="right">向右走</a>
+		<div id="div1">
+			<ul>
+				<li><img src="images/1.jpg"></li>
+				<li><img src="images/2.jpg"></li>
+				<li><img src="images/3.jpg"></li>
+				<li><img src="images/4.jpg"></li>
+			</ul>
+		</div>
+		<script>
+			var oDiv1 = document.getElementById("div1");
+			var oUl = oDiv1.getElementsByTagName("ul")[0];
+			var aLi = oUl.getElementsByTagName("li");
+			var speed = 2;
+
+			// oUl.innerHTML = oUl.innerHTML + oUl.innerHTML;
+			oUl.innerHTML += oUl.innerHTML; //赋值一份
+			oUl.style.width = aLi[0].offsetWidth * aLi.length + "px";
+
+			var timer = setInterval(move,30);
+
+
+			//向左走
+			var oLeft = document.getElementById("left");
+			oLeft.onclick = function(){
+				speed = -2;
+			}
+
+			//向右走
+			var oRight = document.getElementById("right");
+			oRight.onclick = function(){
+				speed = 2;
+			}
+
+			oDiv1.onmouseover = function(){
+				clearInterval(timer);
+			}
+
+			oDiv1.onmouseout = function(){
+				timer = setInterval(move,30);
+			}
+
+			function move(){
+
+				if(oUl.offsetLeft > 0)
+				{
+					oUl.style.left = -oUl.offsetWidth/2 + "px";
+				}
+
+				if(oUl.offsetLeft < -oUl.offsetWidth/2)
+				{
+					oUl.style.left = 0;
+				}
+
+				oUl.style.left = oUl.offsetLeft + speed + "px";
+		
+			}
+		</script>
+	</body>
+</html>

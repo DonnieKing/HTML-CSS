@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<input type="text" id="name">
+		<input type="submit" value="添加" id="btn">
+		<ul id="ul"></ul>
+		<script>
+			 var oBtn = document.getElementById("btn");
+			 var oName = document.getElementById("name");
+			 var oUl = document.getElementById("ul");
+
+			 oBtn.onclick = function(){
+
+			 	var sName = oName.value;
+			 	// console.log(sName);
+			 	var oLi = document.createElement('li'); //创建一个li元素
+			 	// console.log(oLi);
+			 	
+			 	oLi.innerHTML = sName + " <a href='javascript:;'>删除</a>";
+			 	// console.log(oLi);
+			 	
+			 	// insertBefore(子节点, 原有子节点)——在已有元素前插入
+
+
+			 	var aLi = oUl.getElementsByTagName("li");
+
+			 	if(aLi.length > 0)
+			 	{
+					oUl.insertBefore(oLi,aLi[0]);
+			 	}
+			 	else
+			 	{
+			 		 oUl.appendChild(oLi);
+			 	}
+			 	// console.log(aLi);
+
+	
+ 				var aA = oUl.getElementsByTagName("a");
+
+
+			 	// console.log(aA);
+
+				for(var i=0;i<aA.length;i++){
+				 	aA[i].onclick = function(){
+				 		oUl.removeChild(this.parentNode);
+				 	}
+				}
+			 }
+		</script>
+	</body>
+</html>
