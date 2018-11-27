@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#box{width: 200px;height: 200px;background: red;position: absolute;top:50px;left:0;}
+		</style>
+	</head>
+	<body>
+		<button onclick="move()">开始运动</button>
+		<div id="box"></div>
+		<script>
+			// 0 7 14 …… 280 287 294 301
+			var timer = null;
+			function move(){
+				var oBox = document.getElementById("box");
+				var speed = 7;
+			 	timer = setInterval(function(){
+					if(oBox.offsetLeft >= 300)
+					{
+						clearInterval(timer);
+					}
+					oBox.style.left = oBox.offsetLeft + speed + "px";
+				},30);
+			}
+		</script>
+	</body>
+</html>

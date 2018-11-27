@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#box{width: 200px;height: 200px;background: red;position: absolute;top:50px;left:0;}
+		</style>
+	</head>
+	<body>
+		<button onclick="move()">开始运动</button>
+		<div id="box"></div>
+		<script>
+			function move(){
+				var oBox = document.getElementById("box");
+				setInterval(function(){
+					oBox.style.left = oBox.offsetLeft + 10 + "px";
+				},30);
+			}
+		</script>
+	</body>
+</html>

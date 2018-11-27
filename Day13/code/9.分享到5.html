@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#box{
+				cursor: pointer;
+				width: 150px;
+				height: 300px;
+				background: pink;
+				position: absolute;
+				top:100px;
+				left: -150px;
+			}
+
+			#box span{
+				color: #fff;
+				width: 20px;
+				height: 60px;
+				line-height: 20px;
+				background: green;
+				position: absolute;
+				right: -20px;
+				top: 50%;
+				margin-top: -30px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span>分享到</span>
+		</div>
+		<script>
+			var oBox = document.getElementById("box");
+			oBox.onmouseover = function(){
+				move(0);
+			}
+
+			oBox.onmouseout = function(){
+				move(-150);
+			}
+
+			var timer = null;
+
+			function move(iTarget){
+				var oBox = document.getElementById("box");
+				var speed = 0;
+				/*
+				if(oBox.offsetLeft < iTarget)
+				{
+					speed = 10;
+				}
+				else
+				{
+					speed = -10;
+				}
+				*/
+				speed = oBox.offsetLeft < iTarget ? 10 : -10;
+
+				clearInterval(timer);
+				timer = setInterval(function(){
+					if(oBox.offsetLeft == iTarget)
+					{
+						clearInterval(timer);
+					}
+					else
+					{
+						oBox.style.left = oBox.offsetLeft + speed + "px";
+					}
+					
+				},30)
+			}
+
+		</script>
+	</body>
+</html>

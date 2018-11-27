@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#box{width: 100px;height: 100px;background: red;position: absolute;top:50px;left:0;}
+
+			#box2{width: 1px;height: 300px;background: black;position: absolute;top:0;left: 300px;}
+		</style>
+	</head>
+	<body>
+		<button onclick="move()">开始运动</button>
+		<div id="box"></div>
+		<div id="box2"></div>
+		<script>
+			var timer = null;
+			function move(){
+				var oBox = document.getElementById("box");
+				clearInterval(timer);
+				timer = setInterval(function(){
+					var speed = (300 - oBox.offsetLeft)/10;
+					if(oBox.offsetLeft == 300)
+					{		
+						clearInterval(timer);	
+					}
+					else{
+						oBox.style.left = oBox.offsetLeft + speed + "px";
+					}
+					
+					document.title = oBox.offsetLeft + "|" + speed;
+				},30)
+
+			}
+
+		</script>
+	</body>
+</html>

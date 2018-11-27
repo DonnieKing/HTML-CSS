@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#box{width: 100px;height: 100px;background: red;position: absolute;top:50px;left:600px;}
+
+			#box2{width: 1px;height: 300px;background: black;position: absolute;top:0;left: 300px;}
+			#box3{width: 1px;height: 300px;background: black;position: absolute;top:0;left: 100px;}
+		</style>
+	</head>
+	<body>
+		<button onclick="move(100)">到100</button>
+		<button onclick="move(300)">到300</button>
+		<div id="box"></div>
+		<div id="box2"></div>
+		<div id="box3"></div>
+		<script>
+			var timer = null;
+			function move(iTarget){
+				var oBox = document.getElementById("box");
+				clearInterval(timer);
+				timer = setInterval(function(){
+					var speed = 0;
+					if(oBox.offsetLeft < iTarget)
+					{
+						speed = 7;
+					}
+					else
+					{
+						speed = -7;
+					}
+					
+					if(Math.abs(iTarget- oBox.offsetLeft) <= 7)
+					{		
+						clearInterval(timer);	
+						oBox.style.left  = iTarget + "px";
+					}
+					else{
+						oBox.style.left = oBox.offsetLeft + speed + "px";
+					}
+				},30)
+
+			}
+
+		</script>
+	</body>
+</html>

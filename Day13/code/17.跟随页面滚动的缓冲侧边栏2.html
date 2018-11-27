@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			body{
+				height: 2000px;
+			}
+			#box{width: 80px;height: 100px;background: red;position: absolute;bottom: 0;right: 0;}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script>
+			// 页面鼠标滚动事件
+			window.onscroll = function(){
+				// console.log('ok');
+				var oBox = document.getElementById("box");
+				// top = 可视区高度 - 物体真实高度 + 每次滚动的距离
+				// 可视区高度 document.documentElement.clientHeight
+				// 物体真实高度 oBox.offsetHeight
+				
+				// 获取滚动的距离
+				var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+				
+				// oBox.style.top = document.documentElement.clientHeight - oBox.offsetHeight + scrollTop + "px";
+				move(document.documentElement.clientHeight - oBox.offsetHeight + scrollTop);
+			}
+			
+			var timer = null;
+			function move(iTarget){
+				var oBox = document.getElementById("box");
+				clearInterval(timer);
+				timer = setInterval(function(){
+					var speed = (iTarget-oBox.offsetTop)/4;
+					speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+					if(oBox.offsetTop == iTarget)
+					{
+						clearInterval(timer);
+					}
+					else
+					{
+						oBox.style.top = oBox.offsetTop + speed + "px";
+					}
+				},30);
+			}
+		</script>
+	</body>
+</html>

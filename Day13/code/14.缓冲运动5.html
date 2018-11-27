@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#box{width: 100px;height: 100px;background: red;position: absolute;top:50px;left:600px;}
+
+			#box2{width: 1px;height: 300px;background: black;position: absolute;top:0;left: 300px;}
+		</style>
+	</head>
+	<body>
+		<button onclick="move(300)">开始运动</button>
+		<div id="box"></div>
+		<div id="box2"></div>
+		<script>
+			var timer = null;
+			function move(iTarget){
+				var oBox = document.getElementById("box");
+				clearInterval(timer);
+				timer = setInterval(function(){
+					var speed = (iTarget - oBox.offsetLeft)/10;
+					speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+					if(oBox.offsetLeft == iTarget)
+					{		
+						clearInterval(timer);	
+					}
+					else{
+						oBox.style.left = oBox.offsetLeft + speed + "px";
+					}
+					
+					// document.title = oBox.offsetLeft + "|" + speed;
+				},30)
+
+			}
+
+		</script>
+	</body>
+</html>
