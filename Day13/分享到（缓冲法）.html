@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#box{
+				cursor: pointer;
+				width: 150px;
+				height: 300px;
+				background: pink;
+				position: absolute;
+				top:100px;
+				left: -150px;
+			}
+
+			#box span{
+				color: #fff;
+				width: 20px;
+				height: 60px;
+				line-height: 20px;
+				background: green;
+				position: absolute;
+				right: -20px;
+				top: 50%;
+				margin-top: -30px;
+			}
+
+			#box2{
+				 width:1px;
+				 height:300px;
+				 background: black;
+				 position: absolute;
+				 top:0;
+				 left:150px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span>分享到</span>
+		</div>
+		<div id="box2"></div>
+		<script>
+			var oBox = document.getElementById("box");
+			oBox.onmouseover = function(){
+				move();
+			}
+
+			oBox.onmouseout = function(){
+				move2();
+			}
+
+			var timer = null;
+
+			function move(){
+				var oBox = document.getElementById("box");
+				clearInterval(timer);
+				timer = setInterval(function(){
+					if(oBox.offsetLeft == 0)
+					{
+						clearInterval(timer);
+					}
+					else
+					{
+						oBox.style.left = oBox.offsetLeft + 10 + "px";
+					}
+					
+				},30)
+			}
+
+			function move2(){
+				var oBox = document.getElementById("box");
+				clearInterval(timer);
+				timer = setInterval(function(){
+					if(oBox.offsetLeft == -150)
+					{
+						clearInterval(timer);
+					}
+					else
+					{
+						oBox.style.left = oBox.offsetLeft - 10 + "px";
+					}
+					
+				},30)
+			}
+		</script>
+	</body>
+</html>
