@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#share{
+				cursor: pointer;
+				width: 150px;
+				height: 300px;
+				background: pink;
+				position: absolute;
+				left:-150px;
+				top:50%;
+				margin-top:-150px;
+			}
+
+			#share span{
+				width: 20px;
+				height: 80px;
+				background: green;
+				color: #FFF;
+				position: absolute;
+				top:50%;
+				right:-20px;
+				margin-top: -40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="share">
+			<span>分享到</span>
+		</div>
+		<script>
+				var oShare = document.getElementById("share");
+
+				//鼠标移入：-150px   0
+				oShare.onmouseover = function(){
+					move(0);	
+				}
+
+				//鼠标移出：0       -150px
+				oShare.onmouseout = function(){
+					move(-150);	
+				}				
+
+
+				var timer = null;
+				function move(iTarget){
+					var oShare = document.getElementById("share");
+					clearInterval(timer);
+					timer = setInterval(function(){
+						var speed = (iTarget - oShare.offsetLeft)/15;
+						speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+						if(oShare.offsetLeft == iTarget)
+						{
+							clearInterval(timer);
+						}
+						else
+						{
+							oShare.style.left = oShare.offsetLeft + speed + "px";
+						}
+
+					},30);
+				}
+		</script>
+	</body>
+</html>
