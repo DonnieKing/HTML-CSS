@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			div{color:#FFF;width: 100px;height: 100px;background: red;margin:20px;cursor: pointer;float:left;}
+		</style>
+	</head>
+	<body>
+		<div id="div1">1</div>
+		<div id="div2">2</div>
+		<script>
+				var oDiv1 = document.getElementById("div1");
+				var oDiv2 = document.getElementById("div2");
+
+				oDiv1.timer = oDiv2.timer = null; 
+
+				//div1变高
+				oDiv1.onmouseover = function(){
+			
+					move2(this,400);
+				}
+
+
+				oDiv1.onmouseout = function(){
+					move2(this,100);
+				}	
+
+				//div2变宽
+				oDiv2.onmouseover = function(){
+			
+					move(this,400);
+				}
+
+
+				oDiv2.onmouseout = function(){
+					move(this,100);
+				}	
+
+				function move(obj,iTarget){
+					clearInterval(obj.timer);
+					obj.timer = setInterval(function(){
+						var speed = (iTarget - obj.offsetWidth)/15;
+						speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+						if(obj.offsetWidth == iTarget)
+						{
+							clearInterval(obj.timer);
+						}
+						else
+						{
+							obj.style.width = obj.offsetWidth + speed + "px";
+						}
+
+					},30);
+				}	
+
+				function move2(obj,iTarget){
+					clearInterval(obj.timer);
+					obj.timer = setInterval(function(){
+						var speed = (iTarget - obj.offsetHeight)/15;
+						speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+						if(obj.offsetHeight == iTarget)
+						{
+							clearInterval(obj.timer);
+						}
+						else
+						{
+							obj.style.height = obj.offsetHeight + speed + "px";
+						}
+
+					},30);
+				}				
+		</script>
+	</body>
+</html>

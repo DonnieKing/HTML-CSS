@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	   <style>
+
+	   		body{
+	   			height:2000px;
+	   		}
+			div{
+				 width:100px;
+				 height:100px;
+				 background: #ccffbb;
+				 font-size: 12px;
+				 float:left;
+				 margin:30px;
+				 color:#FFF;
+				 cursor: pointer;
+			}
+
+			#div4{
+				width:300px;
+				height:300px;
+				position: absolute;
+				top:0;
+				left:50%;
+				
+			}
+	   </style>
+</head>
+<body>
+	  
+	   <div id="div1">1</div>
+	   <div id="div2">2</div>
+	   <div id="div3">大</div>
+	   <div id= "div4"><img src="./images/duolaAmeng.jpg"></div>
+
+
+	   <script>
+	   		 var oDiv1 = document.getElementById('div1');
+	   		 var oDiv2 = document.getElementById('div2');
+	   		 var oDiv3 = document.getElementById('div3');
+	   		 var oDiv4 = document.getElementById('div4');
+
+	   		  oDiv1.timer = oDiv2.timer = oDiv3.timer = oDiv4.timer = null;
+
+	   		  oDiv1.onmouseover = function(){
+	   		  		move(this,"width",400);
+	   		  }
+
+	   		  oDiv1.onmouseout = function(){
+	   		  		move(this,"width",100);
+	   		  }
+
+	   		  oDiv2.onmouseover = function(){
+	   		  		move(this,"height",400);
+	   		  }
+
+	   		  oDiv2.onmouseout = function(){
+	   		  		move(this,"height",100);
+	   		  }
+
+	   		  oDiv3.onmouseover = function(){
+	   		  		move(this,"fontSize",100);
+	   		  		
+	   		  }
+
+	   		  oDiv3.onmouseout = function(){
+	   		  		move(this,"fontSize",12);
+
+	   		  }
+	   		  oDiv4.onmouseover = function(){
+	   		  		move(this,"top",300);
+	   		  		
+	   		  }
+
+	   		  oDiv4.onmouseout = function(){
+	   		  		move(this,"top",0);
+
+	   		  }
+
+
+	   		  function move(obj,attr,iTaregt){
+
+	   		  	clearInterval(obj.timer);
+
+	   		 obj.timer = setInterval(function(){
+
+	   		  		var speed = (iTaregt-parseInt(getStyle(obj,attr)))/10 ;
+
+	   		  		speed = speed >0 ? Math.ceil(speed) : Math.floor(speed) ;
+
+	   		  		if(iTaregt == parseInt(getStyle(obj,attr))){
+
+	   		  			 clearInterval(obj.timer);
+	   		  		}
+	   		  		else
+	   		  		{
+	   		  			obj.style[attr] = parseInt(getStyle(obj,attr)) + speed + "px" ;
+	   		  		}
+	   		  },30);
+
+	   		  }
+
+
+	   		   function getStyle(obj,name){
+
+	   		   	   if(obj.currentStyle){
+	   		   	   		return obj.currentStyle[name];
+	   		   	   }
+	   		   	   else
+	   		   	   {
+	   		   	   		return getComputedStyle(obj,false)[name];
+	   		   	   }
+	   		   }
+	   </script>
+</body>
+</html>

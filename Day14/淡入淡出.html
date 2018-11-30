@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	   <style>
+	   		
+			div{
+				 width:400px;
+				 height:400px;
+				 background: red;
+				 opacity:0.3;
+				 filter:alpha(opacity:30);
+				 
+			}
+
+	   </style>
+</head>
+<body>
+	  
+	   <div id="div1">1</div>
+
+
+	   <script> 
+
+	     var oDiv1 = document.getElementById('div1');
+
+	      oDiv1.onmouseover = function(){
+	      		move(this,"opacity",100);
+	      }
+
+	      oDiv1.onmouseout = function(){
+	      		move(this,"opacity",30);
+	      }
+	   		 
+
+	   		  function move(obj,attr,iTaregt){
+
+	   		  	clearInterval(obj.timer);
+
+	   		 obj.timer = setInterval(function(){
+
+	   		 	 var current = 0;
+
+	   		 	 if(attr == "opacity"){
+
+	   		 	 	current = Math.round(parseFloat(getStyle(obj,attr))*100);
+	   		 	 }
+	   		 	 else{
+
+	   		 	 		current = parseInt(getStyle(obj,attr));
+	   		 	 }
+
+	   		  		var speed = (iTaregt-current)/10 ;
+
+	   		  		speed = speed >0 ? Math.ceil(speed) : Math.floor(speed) ;
+
+	   		  		if(iTaregt == current){
+
+	   		  			 clearInterval(obj.timer);
+	   		  		}
+	   		  		else
+	   		  		{
+	   		  			if( attr == "opacity"){
+
+	   		  				obj.style.opacity = (current+speed)/100 ;
+	   		  				obj.style.filter = "alpha(opacity:"+(current+speed)+")";
+	   		  			}
+	   		  			else
+	   		  			{
+	   		  				obj.style[attr] = current+speed + "px";
+	   		  			}
+	   		  		}
+	   		  },30);
+
+	   		  }
+
+
+	   		   function getStyle(obj,name){
+
+	   		   	   if(obj.currentStyle){
+	   		   	   		return obj.currentStyle[name];
+	   		   	   }
+	   		   	   else
+	   		   	   {
+	   		   	   		return getComputedStyle(obj,false)[name];
+	   		   	   }
+	   		   }
+	   </script>
+</body>
+</html>

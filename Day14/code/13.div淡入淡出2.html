@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			div{
+				color:#FFF;
+				width: 400px;
+				height: 400px;
+				background: red;
+				opacity: 0.3;               /*兼容FF、谷歌等*/
+				filter: alpha(opacity:30);  /*兼容IE6-IE8*/
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<script>
+				var oDiv = document.getElementById("div1");
+				//淡出
+				oDiv.onmouseover = function(){
+					move(this,"opacity",100);
+				}
+
+				//淡入
+				oDiv.onmouseout = function(){
+					move(this,"opacity",30);
+				}
+
+				function move(obj,attr,iTarget){
+					clearInterval(obj.timer);
+					obj.timer = setInterval(function(){
+
+						var current = 0;
+						if(attr == "opacity")
+						{
+							current = Math.round(parseFloat(getStyle(obj,attr))*100);   //Math.round 四舍五入
+							// console.log(current);
+						}
+						else
+						{
+							current = parseInt(getStyle(obj,attr));
+						}
+
+						var speed = (iTarget - current)/6;
+						speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+						if(current == iTarget)
+						{
+							clearInterval(obj.timer);
+						}
+						else
+						{
+							if(attr == "opacity")
+							{
+								obj.style.opacity = ( current + speed )/100;
+								obj.style.filter = "alpha(opacity:"+ (current + speed) +")";
+							}
+							else
+							{
+								obj.style[attr] = current + speed + "px";
+							}
+							
+							// document.title = current;
+						}
+
+					},30);
+				}	
+
+				function getStyle(obj,name)
+				{
+
+					if(obj.currentStyle)
+					{
+						return obj.currentStyle[name]; //兼容IE
+					}
+					else
+					{
+						return getComputedStyle(obj,false)[name];  //兼容FF等
+					}
+				}			
+
+		</script>
+	</body>
+</html>

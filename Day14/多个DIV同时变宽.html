@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width:100px;
+			height:100px;
+			background: #ffccbb;
+			margin:20px;
+			cursor:pointer;
+		}
+	</style>
+
+</head>
+<body>
+		<div></div>
+		<div></div>
+		<div></div>
+
+		 <script>
+		 	var aDiv = document.getElementsByTagName('div');
+
+		 	for(var i =0;i<aDiv.length;i++){
+
+		 			aDiv[i].timer = null;
+
+		 	 	aDiv[i].onmouseover = function(){
+
+		 	 			move(this,900);
+		 	 	}
+		 	 	aDiv[i].onmouseout = function(){
+
+		 	 			move(this,100);
+		 	 	}
+		 	}
+
+		 	  // var timer = null ;
+
+		 	  function move(obj,iTarget){
+
+		 	  	  clearInterval(obj.timer);
+		 	  	 
+
+		 	  	   obj.timer = setInterval(function(){
+
+		 	  	   	var speed= (iTarget-obj.offsetWidth)/10;
+
+		 	  	   speed = speed>0?  Math.ceil(speed):Math.floor(speed);
+
+		 	  	   		if(obj.offsetWidth == iTarget){
+
+		 	  	   			clearInterval(obj.timer);
+		 	  	   		}else{
+
+		 	  	   			 obj.style.width = obj.offsetWidth + speed + "px" ;
+		 	  	   		}
+
+		 	  	   },30)
+
+		 	  }
+
+		 </script>
+</body>
+</html>

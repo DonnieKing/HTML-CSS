@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#box{width:300px;height: 100px;background: red;border:1px solid #000;}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+	</body>
+	<script>
+		var oBox = document.getElementById("box");
+		setInterval(function(){
+			oBox.style.width = parseInt(getStyle(oBox,"width")) - 1 + "px";
+		},30)
+
+		console.log(getStyle(oBox,"width"));
+		
+		function getStyle(obj,name)
+		{
+
+			if(obj.currentStyle)
+			{
+				return obj.currentStyle[name]; //兼容IE
+			}
+			else
+			{
+				return getComputedStyle(obj,false)[name];  //兼容FF等
+			}
+		}
+	</script>
+</html>

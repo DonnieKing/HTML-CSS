@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			div{color:#FFF;width: 100px;height: 100px;background: red;margin:20px;cursor: pointer;}
+		</style>
+	</head>
+	<body>
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<script>
+				var aDiv = document.getElementsByTagName("div");
+				for(var i=0;i<aDiv.length;i++)
+				{	
+					//div变宽->400px
+					aDiv[i].timer = null;
+					aDiv[i].onmouseover = function(){
+						// console.log(i);
+						move(this,400);
+					}
+
+					//div变窄->100px
+					aDiv[i].onmouseout = function(){
+						move(this,100);
+					}	
+				}
+
+				function move(obj,iTarget){
+					clearInterval(obj.timer);
+					obj.timer = setInterval(function(){
+						var speed = (iTarget - obj.offsetWidth)/15;
+						speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+						if(obj.offsetWidth == iTarget)
+						{
+							clearInterval(obj.timer);
+						}
+						else
+						{
+							obj.style.width = obj.offsetWidth + speed + "px";
+						}
+
+					},30);
+				}			
+		</script>
+	</body>
+</html>

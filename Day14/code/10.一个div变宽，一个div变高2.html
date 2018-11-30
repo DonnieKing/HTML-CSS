@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			div{color:#FFF;width: 100px;height: 100px;background: red;margin:20px;cursor: pointer;float:left;font-size: 12px;}
+		</style>
+	</head>
+	<body>
+		<div id="div1">1</div>
+		<div id="div2">2</div>
+		<div id="div3">床前明月光，王楚脱光光！</div>
+		<script>
+				var oDiv1 = document.getElementById("div1");
+				var oDiv2 = document.getElementById("div2");
+				var oDiv3 = document.getElementById("div3");
+
+				oDiv1.timer = oDiv2.timer = oDiv3.timer =  null; 
+
+				//div1变高
+				oDiv1.onmouseover = function(){
+			
+					move(this,"height",400);
+				}
+
+
+				oDiv1.onmouseout = function(){
+					move(this,"height",100);
+				}	
+
+				//div2变宽
+				oDiv2.onmouseover = function(){
+			
+					move(this,"width",400);
+				}
+
+
+				oDiv2.onmouseout = function(){
+					move(this,"width",100);
+				}	
+
+
+
+				//div3文字变大变小
+				oDiv3.onmouseover = function(){
+			
+					move(this,"fontSize",50);
+				}
+
+
+				oDiv3.onmouseout = function(){
+					move(this,"fontSize",12);
+				}	
+
+				function move(obj,attr,iTarget){
+					clearInterval(obj.timer);
+					obj.timer = setInterval(function(){
+						var speed = (iTarget - parseInt(getStyle(obj,attr)))/15;
+						speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+						if(parseInt(getStyle(obj,attr)) == iTarget)
+						{
+							clearInterval(obj.timer);
+						}
+						else
+						{
+							obj.style[attr] = parseInt(getStyle(obj,attr)) + speed + "px";
+						}
+
+					},30);
+				}	
+
+				function getStyle(obj,name)
+				{
+
+					if(obj.currentStyle)
+					{
+						return obj.currentStyle[name]; //兼容IE
+					}
+					else
+					{
+						return getComputedStyle(obj,false)[name];  //兼容FF等
+					}
+				}			
+		</script>
+	</body>
+</html>

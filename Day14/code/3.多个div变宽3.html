@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			div{color:#FFF;width: 100px;height: 100px;background: red;margin:20px;cursor: pointer;}
+		</style>
+	</head>
+	<body>
+		<div id="div1">1</div>
+		<div id="div2">2</div>
+		<div id="div3">3</div>
+		<script>
+				var oDiv1 = document.getElementById("div1");
+				var oDiv2 = document.getElementById("div2");
+				var oDiv3 = document.getElementById("div3");
+
+				oDiv1.timer = oDiv2.timer = oDiv3.timer = null; 
+
+
+				oDiv1.onmouseover = oDiv2.onmouseover = oDiv3.onmouseover =function(){
+					// console.log(i);
+					move(this,400);
+				}
+
+				//div变窄->100px
+				oDiv1.onmouseout = oDiv2.onmouseout = oDiv3.onmouseout = function(){
+					move(this,100);
+				}	
+
+
+				function move(obj,iTarget){
+					clearInterval(obj.timer);
+					obj.timer = setInterval(function(){
+						var speed = (iTarget - obj.offsetWidth)/15;
+						speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+						if(obj.offsetWidth == iTarget)
+						{
+							clearInterval(obj.timer);
+						}
+						else
+						{
+							obj.style.width = obj.offsetWidth + speed + "px";
+						}
+
+					},30);
+				}			
+		</script>
+	</body>
+</html>
