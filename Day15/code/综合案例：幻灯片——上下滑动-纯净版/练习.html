@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>淘宝幻灯片上下滑动效果 —— www.moocba.com —— 慕课吧</title>
+		<link href="style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div class="play" id="play">
+			<ol>
+	            <li class="active">1</li>
+	            <li>2</li>
+	            <li>3</li>
+	            <li>4</li>
+	            <li>5</li>
+			</ol>
+			<ul>
+				<li>
+					<a href="http://www.moocba.com/">
+						<img src="images/1.jpg" alt="广告一" />
+					</a>
+				</li>
+				<li>
+					<a href="http://www.moocba.com/">
+						<img src="images/2.jpg" alt="广告二" />
+					</a>
+				</li>
+				<li>
+					<a href="http://www.moocba.com/">
+						<img src="images/3.jpg" alt="广告三" />
+					</a>
+				</li>
+				<li>
+					<a href="http://www.moocba.com/">
+						<img src="images/4.jpg" alt="广告四" />
+					</a>
+				</li>
+				<li>
+					<a href="http://www.moocba.com/">
+						<img src="images/5.jpg" alt="广告五" />
+					</a>
+				</li>
+			</ul>
+		</div>
+		<script src="move.js"></script>
+		<script>
+		   
+   			var oPlay = document.getElementById('play');
+
+   			var aLi = document.getElementsByTagName('ol')[0].getElementsByTagName('li');
+
+   			var oUl = document.getElementsByTagName('ul')[0];
+
+   			var now = 0;
+
+   			for(var i =0;i<aLi.length; i++){
+
+   				  aLi[i].index = i;
+
+   				  aLi[i].onclick = function(){
+
+   				  		now = this.index;
+
+   				  	 for(var j=0;j<aLi.length;j++){
+
+   				  	 	  aLi[j].className = "";
+   				  	 }
+
+   				  		aLi[now].className ="active";
+
+   				  		 move(oUl,{top:-150*now});
+   				  }
+   			}
+
+   			 var timer = setInterval(next,2000);
+
+
+   			  oPlay.onmouseover = function(){
+
+   			  	   clearInterval(timer);
+   			  }
+
+   			  oPlay.onmouseout = function(){
+
+		  		timer = setInterval(next,2000);
+
+   			  }
+
+
+   			  function next(){
+
+   			 	  now++ ;
+   			 	  if(now==aLi.length){
+
+   			 	  		now = 0;
+   			 	  }
+
+   			 	  for(var j=0;j<aLi.length;j++){
+
+   				  	 	  aLi[j].className = "";
+   				  	 }
+
+   				  		aLi[now].className ="active";
+
+   				  		 move(oUl,{top:-150*now});
+   			 }
+
+		</script>
+	</body>
+</html>

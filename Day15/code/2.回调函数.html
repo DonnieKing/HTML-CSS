@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			function he(a,b,fn){
+				console.log(a+b);
+				// if(fn)
+				// {
+				// 	fn();
+				// }
+				if(fn)fn();
+			}
+			he(12,5);
+
+			he(12,5,function(){
+				console.log('ok');
+			})
+
+		</script>
+	</body>
+</html>

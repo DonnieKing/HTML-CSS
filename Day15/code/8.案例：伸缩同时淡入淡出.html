@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#box{width: 400px;height: 100px;background: red;opacity: 0.3;filter: alpha(opacity:30);}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script src="move4.js"></script>
+		<script>
+			var oBox = document.getElementById("box");
+			oBox.onmouseover = function(){
+				move(oBox,{width:100,height:400,opacity:100});
+			}
+
+			oBox.onmouseout = function(){
+				move(oBox,{width:400,height:100,opacity:30});
+			}
+		</script>
+	</body>
+</html>

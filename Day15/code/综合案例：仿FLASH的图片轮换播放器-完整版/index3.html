@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>仿FLASH的图片轮换效果</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+<div id="playimages" class="play">
+    <ul class="big_pic" id="J_bigPic">
+
+		<div class="prev" id="J_prev"></div>
+		<div class="next" id="J_next"></div>
+
+		<div class="text">加载图片说明……</div>
+		<div class="length">计算图片数量……</div>
+		
+		<a class="mark_left" href="javascript:;" id="J_markLeft"></a>
+		<a class="mark_right" href="javascript:;" id="J_markRight"></a>
+		<div class="bg"></div>
+		
+        <li style="z-index:1;"><img src="images/1.jpg" /></li>
+        <li><img src="images/2.jpg" /></li>
+        <li><img src="images/3.jpg" /></li>
+        <li><img src="images/4.jpg" /></li>
+        <li><img src="images/5.jpg" /></li>
+        <li><img src="images/6.jpg" /></li>
+    </ul>
+    <div class="small_pic" id="J_smallPic">
+        <ul style="width:390px;">
+            <li style="filter: 100; opacity: 1;"><img src="images/1.jpg" /></li>
+            <li><img src="images/2.jpg" /></li>
+            <li><img src="images/3.jpg" /></li>
+            <li><img src="images/4.jpg" /></li>
+            <li><img src="images/5.jpg" /></li>
+            <li><img src="images/6.jpg" /></li>
+        </ul>
+    </div>
+</div>
+<script src="move.js"></script>
+<script>
+    //1、左右遮罩及按钮移入移出——淡入淡出
+    var oMarkLeft = document.getElementById("J_markLeft");
+    var oMarkRight = document.getElementById("J_markRight");
+    var oPrev = document.getElementById("J_prev");
+    var oNext = document.getElementById("J_next");
+
+    oMarkLeft.onmouseover = oPrev.onmouseover = function(){
+        move(oPrev,{opacity:100});
+    }
+
+    oMarkLeft.onmouseout = oPrev.onmouseout = function(){
+        move(oPrev,{opacity:0});
+    }
+
+    oMarkRight.onmouseover = oNext.onmouseover = function(){
+        move(oNext,{opacity:100});
+    }
+
+    oMarkRight.onmouseout = oNext.onmouseout = function(){
+        move(oNext,{opacity:0});
+    }
+
+
+    // 2、下方的 li 点击切换大图——层级、高度下拉变化
+     var oSmallPic = document.getElementById("J_smallPic");
+     var aSmallLi = oSmallPic.getElementsByTagName("li");
+
+     var oBigPic = document.getElementById("J_bigPic");
+     var aBigLi = oBigPic.getElementsByTagName("li");
+     var nowZindex = 1;
+     var now = 0;
+
+     for(var i=0;i<aSmallLi.length;i++)
+     {
+        aSmallLi[i].index = i;
+        aSmallLi[i].onclick = function(){
+            if(this.index == now) return;
+            now = this.index;
+
+            aBigLi[this.index].style.zIndex = nowZindex++;
+            aBigLi[this.index].style.height = 0;
+            move(aBigLi[this.index],{height:320});
+
+            for(var j=0;j<aSmallLi.length;j++)
+            {
+                move(aSmallLi[j],{opacity:60});
+            }
+
+            move(aSmallLi[this.index],{opacity:100});
+        }
+
+        aSmallLi[i].onmouseover = function(){
+            move(this,{opacity:100});
+        }
+
+        aSmallLi[i].onmouseout = function(){
+            if(this.index != now)
+            {
+                move(this,{opacity:60});
+            }
+        }
+     }
+
+</script>
+</body>
+</html>

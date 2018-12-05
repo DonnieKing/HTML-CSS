@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#box{
+				width: 200px;
+				height: 200px;
+				background: red;
+				opacity: 0.3;
+				filter: alpha(opacity:30);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script src="move2.js"></script>
+		<script>
+		    var oBox = document.getElementById("box");
+		    //鼠标移入依次变宽、变高、透明度变大
+		    oBox.onmouseover = function(){
+		    	move(this,"width",400,function(){
+		    		move(oBox,"height",400,function(){
+		    			move(oBox,"opacity",100)
+		    		});
+		    	});
+		    }
+
+		    
+		     //鼠标移入依次变回来
+		    oBox.onmouseout = function(){
+		    	move(this,"opacity",30,function(){
+		    		move(oBox,"height",200,function(){
+		    			move(oBox,"width",200)
+		    		});
+		    	});
+		    }
+		</script>
+	</body>
+</html>
