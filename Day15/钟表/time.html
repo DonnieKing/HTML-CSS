@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<style>
+			#clock{
+				 width:340px;
+				 height:330px;
+				 background: green url(./timg.jpg);
+				 border-radius: 50%;
+				 margin:120px auto;
+				 /*border:1px solid black;*/
+				 position: relative;
+			}
+			#box{
+				width:20px;
+				height:20px;
+				border-radius:50%;
+				background: black;
+				position: relative;
+				left:160px;
+				top:155px;
+				z-index: 10;
+			}
+			#hour{
+				 width:10px;
+				 height:70px;
+				 background: #bbccdd;
+				 position: absolute;
+				 left:165px;
+				 top:88px;
+				 z-index: 5;
+				 transform-origin:100% 100%;
+
+			}
+			#minute{
+				 width:7px;
+				 height:90px;
+				 background: #eeddaa;
+				 position: absolute;
+				 left:165px;
+				 top:70px;
+				 z-index: 3;
+				 transform-origin:bottom;
+			}
+			#second{
+				 width:4px;
+				 height:150px;
+				 background: #ccbbdd;
+				 position: absolute;
+				 left:167px;
+				 top:21px;
+				 transform-origin:bottom;
+			}
+		</style>
+</head>
+<body> 
+	 <div id="clock">
+		 <div id="box"></div>
+		 <div id="hour"></div>
+		 <div id="minute"></div>
+		 <div id="second"></div>
+
+	 </div>
+
+	 <script>
+	 		var oHour = document.getElementById('hour');
+	 		var oMinute = document.getElementById('minute');
+	 		var oSecond = document.getElementById('second');
+	 		
+	 		function times(){
+	 			 var time = new Date();
+	 				oHour.style.transform="rotate("+(time.getHours()*30+time.getMinutes()/2)+"deg)";
+					oMinute.style.transform="rotate("+(time.getMinutes()*6+time.getSeconds()/10)+"deg)";
+					oSecond.style.transform="rotate("+(time.getSeconds()*6)+"deg)";
+	 		}
+
+	 		times();
+	 		setInterval(times,1000);
+
+	 </script>
+	
+</body>
+</html>
