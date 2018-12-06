@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">获取</button>
+	<ul id="list"></ul>
+	<script src="ajax.js"></script>
+	<script>
+		var oBtn = document.getElementById("btn");
+		var oList = document.getElementById("list");
+		oBtn.onclick = function(){
+			ajax("array2.txt?t="+ Math.random(),function(res){
+				res = eval(res);
+				// console.log(res);
+				for(var i=0;i<res.length;i++)
+				{
+					var oLi = document.createElement("li");
+					oLi.innerHTML = res[i].name + res[i].age + " <a href='javascript:;'>删除</a>";
+					oList.appendChild(oLi);
+				}
+				
+			});
+		}
+	</script>
+</body>
+</html>

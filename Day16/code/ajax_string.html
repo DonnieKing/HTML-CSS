@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">获取</button>
+	<script src="ajax.js"></script>
+	<script>
+		var oBtn = document.getElementById("btn");
+		oBtn.onclick = function(){
+			ajax("text.txt",function(res){
+				console.log(res);
+			});
+		}
+	</script>
+</body>
+</html>
