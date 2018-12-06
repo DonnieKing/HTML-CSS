@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">获取</button>
+	<div id="div"></div>
+	<script>
+		var oBtn = document.getElementById("btn");
+		var oDiv = document.getElementById("div");
+		oBtn.onclick = function(){
+			ajax('json.txt',function(res){
+				console.log(res);
+			},function(error){
+				console.log(error);
+			})
+		}
+
+		function ajax(url,fnSuccess,fnFail)
+		{
+			// 1、创建一个Ajax对象
+
+			// alert(window.XMLHttpRequest);
+			// 通过检查window对象是否有XMLHttpRequest属性来确定浏览器是否支持XMLHttpRequest
+
+			if(window.XMLHttpRequest)
+			{
+				var oAjax = new XMLHttpRequest();       //FF、谷歌等
+			}
+			else
+			{
+				var oAjax = new ActiveXObject("Microsoft.XMLHTTP");  //IE6
+			}
+
+			// alert(oAjax);
+
+			// 2、连接到服务器
+			// open(请求方式, 文件名, 异步传输)
+			oAjax.open("GET",url,true);
+
+			// 3、发送请求
+			oAjax.send();
+
+			// 4、接收返回
+			oAjax.onreadystatechange = function(){
+				// （完成）响应内容解析完成，可以在客户端调用了
+
+				if(oAjax.readyState == 4)
+				{
+					// status 属性：请求结果
+					// 200   访问成功且无错误
+					if(oAjax.status == 200)
+					{
+						fnSuccess(oAjax.responseText);
+					}
+					else
+					{
+						if(fnFail)fnFail(oAjax.status);
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>

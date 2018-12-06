@@ -1,0 +1,93 @@
+<!DOCTYPE html>  
+<html>  
+    <head>  
+        <meta charset="UTF-8">  
+        <title> JSONP跨域 （百度为例）</title>  
+        <style>  
+            *{  
+                margin:0;  
+                padding:0;  
+            }  
+
+            #search-container{  
+                width:500px;  
+                height:600px;  
+                margin:0 auto;  
+                border:0px solid gray;  
+            }  
+
+            #search-container input{  
+                width:476px;  
+                height:40px;  
+                line-height: 40px;  
+                padding-left:20px;  
+                font-size: 16px;  
+            }  
+
+            #search-container ul{  
+                height:auto;  
+                border:1px solid #ccc;  
+                display: none;  
+            }  
+
+            #search-container ul li{  
+                width:100%;  
+                height:30px;  
+                line-height: 30px;  
+                text-indent:10px;  
+                font-size: 16px;  
+                list-style: none;  
+            }  
+
+            #search-container ul li a{  
+                text-decoration:none;  
+            }  
+
+            #search-container ul li:hover{  
+                display:block;  
+                background:#ccc;  
+                color:#fff;  
+            }  
+        </style>  
+    </head>  
+    <body>  
+        <div id="search-container">  
+            <input type="text" id="text">  
+            <ul id="list">
+             <!--
+                <li><a href="https://www.baidu.com/s?ie=utf-8&wd=么么哒">么么哒</a></li>
+                <li><a href="#">么么哒什么意思</a></li>
+                <li><a href="#">么么直播</a></li> 
+            -->
+            </ul>  
+        </div>  
+        <script>
+            var oText = document.getElementById("text");
+            var oList = document.getElementById("list");
+
+            oText.onkeyup = function()
+            {
+                // console.log(oText.value);
+                var keywords = oText.value;
+                var script = document.createElement("script");
+                script.src = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=" + keywords + "&cb=callback";
+                document.body.appendChild(script);
+                document.body.removeChild(script);
+            }
+
+            function callback(data){
+
+                // console.log(data.s);
+                var sLi = "";
+                for(var i=0;i<data.s.length;i++)
+                {
+                    sLi += "<li><a target='_blank' href='https://www.baidu.com/s?ie=utf-8&wd="+data.s[i]+"'>"+data.s[i]+"</a></li>";
+                }
+                oList.innerHTML = sLi;
+
+                oList.style.display = "block";
+                
+            }
+        </script>
+    </body>  
+</html>  

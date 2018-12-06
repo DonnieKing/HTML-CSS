@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">获取</button>
+	<script src="ajax.js"></script>
+	<script>
+		var oBtn = document.getElementById("btn");
+		oBtn.onclick = function(){
+			ajax("json.txt?t="+ Math.random(),function(res){
+				// 为什么eval要添加括号呢？
+				// 原因：eval本身的问题。 由于json是以{}的方式来开始以及结束的，在JS中，它会被当成一个语句块来处理，所以必须强制性的将它转换成一种表达式。加上圆括号的目的是迫使eval函数在处理JavaScript代码的时候强制将括号内的表达式(expression)转化为对象，而不是作为语句(statement)来执行。举一个例子，例如对象字面量{}，如若不加外层的括号，那么eval会将大括号识别为JavaScript代码块的开始和结束标记，那么{}将会被认为是执行了一句空语句。
+				// res = eval("("+res+")");
+				
+				//JSON.parse() 方法用于将一个 JSON 字符串转换为对象。
+				res = JSON.parse(res);
+				console.log(res);
+				console.log(typeof res);
+				console.log(res.name,res.age);
+			});
+		}
+	</script>
+</body>
+</html>
