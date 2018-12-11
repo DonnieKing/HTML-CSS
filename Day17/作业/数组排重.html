@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+				var arr = new Array(12,32,34,60,34,1,1,1,1);
+				Array.prototype.paichong = function(){
+			
+					for(var i=0;i<this.length;i++)
+					{
+						 for(var j=i+1;j<this.length;j++)
+						 {
+						 	  if(this[i]==this[j])
+						 	  {
+						 	  	 this.splice(j,1);  
+						 	  	 j-- ;    //删除了第j个元素之后，下一位元素向前进一位，还是从第j个开始
+						 	  }
+						 }
+						   
+					}
+						return this;
+					  
+				}
+
+				console.log(arr.paichong());
+
+				   
+		</script>
+	</body>
+</html>

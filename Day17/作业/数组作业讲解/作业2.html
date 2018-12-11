@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 2、为Array扩展一个删除数组指定元素的方法
+
+			var arr = ['d','a','b','aa','a','c'];  //=>[1,2,3]
+
+			Array.prototype.unique = function(){
+				this.sort();
+				var o = [this[0]];
+				for(var i=0;i<this.length;i++)
+				{
+					if(this[i] !== o[o.length-1])
+					{
+						o.push(this[i]);
+					}
+				}
+				return o;
+			}
+
+			Array.prototype.delete = function(value){
+				for(var i=0;i<this.length;i++)
+				{
+					if(this[i] == value)
+					{	
+						this.splice(i,1);
+					}
+				}
+				return this;
+			}
+
+			// var arr2 = arr.unique();
+			// arr2.delete('aa');
+			// console.log(arr2);
+			
+			console.log(arr.unique().delete('aa'));
+		</script>
+	</body>
+</html>
+
+
+<!--    Array.prototype.unique = function(){
+   		this.sort();
+   		var o=[this[0]];
+    	for(var i=0;i<this.length;i++){
+			if(this[i] !== o[o.length-1]){
+				o.push(this[i]);
+			}
+    	}
+    		return o;
+   } -->

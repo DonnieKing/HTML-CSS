@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 <style>
+			.box{
+				width:600px;
+				height:500px;   /*590  470*/
+				/*background: red;*/
+				margin:100px auto;
+				position: relative;
+			}
+			.box li{
+				list-style: none;
+				float:left;
+
+			}
+			.title ul{
+				 margin-left:-10px;
+				 position: absolute;
+				 left:0;
+				 bottom:7px;
+				 cursor:pointer;
+				 z-index: 10;
+			}
+
+			.picture{
+				width:590px;
+				height:470px;
+				position: absolute;
+				margin-left: -35px;
+				top:0;
+				left:0;
+				/*overflow: hidden;*/
+			}
+			.title li{
+				width:10px;
+				height:10px;
+				background: #FFF;
+				margin:0 6px;
+				border-radius: 50%;
+			}
+			.picture li{
+				display: none;
+			}
+			.picture li.active{
+				display: block;
+			}
+			.title li.active{
+				background: yellow;
+			}
+			.btn_one{
+				z-index:11;
+				width:80px;
+				height:60px;
+				background: url(./images/btn.gif) no-repeat 0 0;
+				position: absolute;
+				top:50%;
+				left:0;
+				margin-top: -40px;
+				cursor: pointer;
+				opacity: 0.3;
+				filter: alpha(opacity:30);
+			}
+			.btn_two{
+				z-index:11;
+				width:80px;
+				height:80px;
+				background: url(./images/btn.gif) no-repeat 0 -63px;
+				position: absolute;
+				top:50%;
+				right:0;
+				margin-top: -40px;
+				margin-right: -15px;
+				cursor: pointer;
+				opacity: 0.3;
+				filter: alpha(opacity:30);
+			}
+	 </style>
+</head>
+<body>
+	 <div class="box" id="J_box">
+	 		<div class="btn_one" id="J_btn_one"></div>
+	 		<div class="btn_two" id="J_btn_two"></div>
+			<div class="title" id="J_title">
+				<ul class="title-ul">
+					<li class="active"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					
+				</ul>
+			</div>
+			<div class="picture" id="J_picture">
+				<ul class="picture-ul">
+					<li  class="active"><img src="./images/1.jpg"></li>
+					<li><img src="./images/2.jpg"></li>
+					<li><img src="./images/3.jpg"></li>
+					<li><img src="./images/4.jpg"></li>
+					<li><img src="./images/5.jpg"></li>
+					<li><img src="./images/6.jpg"></li>
+					<li><img src="./images/7.jpg"></li>
+					<li><img src="./images/8.jpg"></li>
+				</ul>	
+
+			</div>			
+	 </div>
+		<script src="move.js"></script>
+
+		<script>
+			var oBox = document.getElementById('J_box');
+			var oUlone = oBox.getElementsByTagName('ul')[0];
+			var aLione =oUlone.getElementsByTagName('li');
+			var oUltwo = oBox.getElementsByTagName('ul')[1];
+			var aLitwo =oUltwo.getElementsByTagName('li');
+
+			var now = 0;	
+			// var nowZindex = 1;
+
+			for(var i=0;i<aLione.length;i++){
+
+				  aLione[i].index = i;
+				  aLione[i].onmouseover = function(){
+
+				  	 for(var j=0;j<aLione.length;j++){
+
+				  	 	  now = this.index;
+				  	 	aLione[j].className="";
+				  	 	aLitwo[j].className="";
+				  	 }
+
+				  	 this.className="active";
+				  	 aLitwo[this.index].className="active";
+				  }
+			}
+
+			var oBtnone = document.getElementById('J_btn_one');
+			var oBtntwo = document.getElementById('J_btn_two');
+
+			oBtnone.onmouseover = function(){
+				 move(oBtnone,{opacity:100});
+			}
+			oBtnone.onmouseout = function(){
+				 move(oBtnone,{opacity:30});
+			}
+			oBtntwo.onmouseover = function(){
+				 move(oBtntwo,{opacity:100});
+			}
+			oBtntwo.onmouseout = function(){
+				 move(oBtntwo,{opacity:30});
+			}
+
+
+
+			oBtnone.onclick = function(){
+				// clearInterval(timer);
+				   now--;
+        			if(now == -1){
+					now = aLitwo.length -1;
+					aLitwo[aLitwo.length-1].className="active";
+					aLitwo[0].className="";
+					aLione[aLione.length-1].className="active";
+					aLione[0].className="";
+				}else{
+				 aLitwo[now+1].className="";
+				 aLione[now+1].className="";
+				 aLitwo[now].className = "active" ;
+				 aLione[now].className="active";
+				}
+			}
+
+				oBtntwo.onclick = function(){
+				now++;
+				if(now == aLitwo.length){
+					now = 0;
+					aLitwo[0].className="active";
+					aLitwo[aLitwo.length-1].className="";
+					aLione[0].className="active";
+					aLione[aLitwo.length-1].className="";
+				}else{
+				 aLitwo[now-1].className="";
+				 aLione[now-1].className="";
+				 aLitwo[now].className = "active" ;
+				 aLione[now].className="active";
+				}
+			}
+ 
+		var timer = setInterval(oBtntwo.onclick,2000); 
+		</script>
+</body>
+</html>

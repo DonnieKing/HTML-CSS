@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<script>
+			  var arr = new Array(23,52,626,25);
+
+			  Array.prototype.delete=function(m){
+
+			  	  for(var i=0;i<this.length;i++)
+			  	  {
+			  	  	 if(m == this[i])
+			  	  	 {
+			  	  	 	this.splice(i,1);
+			  	  	 	i--;
+			  	  	 }
+			  	  }
+			  	    return this;
+			  }
+
+			  console.log(arr.delete(23));
+
+
+		</script>
+</body>
+</html>

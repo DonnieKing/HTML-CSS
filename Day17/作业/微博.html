@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			background:#71AFD6 url(./images/timg.jpg) no-repeat;
+			/*width:100%;
+			height:1000px;*/
+			background-size: 100% 1000px;
+
+		}
+		.box{
+			width:600px;
+			height:200px;
+			background-color:#FFF;
+			border-color: #cccccc;
+			margin:50px auto 0;
+			font-family:"微软雅黑";
+			position: relative;
+			color: #1b7fb6;
+
+		}
+		.box-title{
+			width:200px;
+			height:30px;
+			display: inline-block;
+		    /*vertical-align: top;*/
+		    height: 21px;
+		    letter-spacing: 2px;
+		    margin-bottom:0;
+		    margin-top:3px;
+		}
+		.key{
+			 width:345px;
+			 height:15.2px;
+			 position:absolute;
+			 right:5px;
+			 top:6px;
+			 font-size: 12px;
+			 color:#ffc09f;
+		}
+		.key:link{
+			text-decoration: none;
+		}
+		.box-footer{
+			width:450px;
+			height:30px;
+			/*background: red;*/
+			position: absolute;
+			left:10px;
+			bottom:5px;
+			cursor: pointer;
+		}
+ 		.box-footer ul{
+ 			position: absolute;
+ 			bottom:-10px;
+ 		}
+		.box-footer ul li{
+			float:left;
+			list-style: none;
+			margin-right: 45px;
+			 font-size: 13px;
+			 position: relative;
+			/* border:1px solid blue;*/
+		}
+		.box-footer1{
+			background:  url(./images/weixiao.png) no-repeat;
+			width:16px;
+			height:16px;
+			position: absolute;
+			left:-25px;
+			top:2px;
+
+		}
+		.box-footer2{
+			background: url(./images/图片.png) no-repeat;
+			width:16px;
+			height:16px;
+			position: absolute;
+			left:-25px;
+			top:2px;			
+		}
+		.box-footer3{
+			background: url(./images/视频.png) no-repeat;
+			width:16px;
+			height:16px;
+			position: absolute;
+			left:-25px;
+			top:2px;			
+		}
+		.box-footer4{
+			background: url(./images/话题.png) no-repeat;
+			width:16px;
+			height:16px;
+			position: absolute;
+			left:-25px;
+			top:2px;			
+		}
+		.box-footer5{
+			background: url(./images/闪电.png) no-repeat;
+			width:16px;
+			height:16px;
+			position: absolute;
+			left:-25px;
+			top:2px;			
+		}
+		.textone, .texttwo{
+			width:500px;
+			height:100px;
+			margin:25px auto;
+			margin-left:48px;
+
+		}
+		.btn{
+			position: absolute;
+			bottom:5px;
+			right:20px;
+			width:60px;
+			height:30px;
+			background: #ffc09f;
+			border: 1px solid #fbbd9e;
+		}
+		.content{
+			width:600px;
+			height:200px;		
+			background-color:#FFF;
+			border-color: #cccccc;
+			margin:10px auto;
+			font-family: "WBswficon" !important;
+			display: none;
+		}
+		.content-1{
+			margin:10px auto 0;
+			width:200px;
+			height:30px;
+			display: inline-block;
+		    /*vertical-align: top;*/
+		    height: 21px;
+		    letter-spacing: 2px;
+		    color: #1b7fb6;
+		    font-weight: 700;
+		    margin-top:10px;
+	</style>
+</head>
+<body>
+  
+  <div class="box">
+  		<span class="box-title">有什么新鲜事想告诉大家</span>
+  		<a href="" class="key">科幻片成真！4万年前冰封线虫被复活：能动还能吃>></a>
+		 <textarea class="textone" id="J_textone" rows="6" cols="60" style="resize: none; font-size: 20px;line-height: 18px;"></textarea>
+		 <button class="btn" id="J_btn">发布</button>
+		 <div class="box-footer">
+			<ul>
+				<li>表情
+				<span  class="box-footer1"></span>
+				</li>
+				<li>图片
+				<span  class="box-footer2"></span>
+				</li>
+				<li>视频
+				<span  class="box-footer3"></span>
+				</li>
+				<li>话题
+				<span  class="box-footer4"></span>
+				</li>
+				<li >头条文章
+				<span  class="box-footer5"></span>
+				</li>
+
+			</ul>
+
+		 </div>
+	</div>
+	
+
+	<div class="content" id="J_content">
+		<span class="content-1">我的心情</span>
+		<textarea class="texttwo" id="J_texttwo" rows="6" cols="60" style="resize: none;border:none; font-size: 20px;line-height: 18px;"></textarea>
+
+	</div>
+
+
+	<script>
+		 var oTextone = document.getElementById('J_textone');
+		 var oTexttwo = document.getElementById('J_texttwo');
+		 var oBtn = document.getElementById('J_btn');
+		 var oContent = document.getElementById("J_content");
+
+		 oBtn.onclick = function(){
+		 	  oTexttwo.value = oTextone.value;
+		 	  oTextone.value = "";
+		 	  oContent.style.display="block";
+
+		 }
+
+	</script>
+</body>
+</html>
