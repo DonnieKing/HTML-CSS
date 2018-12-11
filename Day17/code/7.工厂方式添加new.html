@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+	function createPerson(name,age){  //构造函数
+
+		 //原料
+		 //var obj = new Object(); //创建一个空白对象
+		 // this = new Object();
+
+		 // 加工
+		 this.name = name;
+		 this.age = age;
+
+		 this.say = function(){
+		 	console.log("我叫" + this.name);
+		 }
+
+		 //出厂
+		 // return obj;
+	}
+
+	var obj1 = new createPerson("jayjun",18);
+	obj1.say();
+
+	var obj2 = new createPerson("jaychou",28);
+	obj2.say();	
+
+	alert(obj1.say);
+	alert(obj2.say);
+
+	// alert(obj1.say == obj2.say); //false
+
+	</script>
+</body>
+</html>

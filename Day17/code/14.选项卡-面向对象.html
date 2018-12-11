@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			*{
+				box-sizing: border-box;
+				padding: 0;margin: 0;
+			}
+			.card{
+				width: 300px;
+				background: pink;
+			}
+
+			.card_title{
+				cursor: pointer;
+				list-style: none;
+				height: 40px;	
+				line-height: 40px;
+			}
+
+			.card_title li{
+				float: left;
+				width: 100px;
+				text-align: center;
+				background: yellow;
+				border:1px solid #FFF;
+			}
+
+			.card_title li.active{
+				background: green;
+				color: #FFF;
+			}
+
+			.card div{
+				height: 300px;
+				padding: 10px;
+				display: none;
+			}
+
+			.card div.active{
+				display: block;
+			}
+		</style>
+		<script>
+			var aLi = null;
+			var aDiv = null;
+			window.onload = function(){
+
+				var oCard = document.getElementById("J_card");
+				aLi = oCard.getElementsByTagName("li");
+				aDiv = oCard.getElementsByTagName("div");
+
+				for(var i=0;i<aLi.length;i++)
+				{
+					aLi[i].index = i;
+					aLi[i].onclick = fnClick;
+				}
+			}
+
+			function fnClick(){
+				for(var j=0;j<aLi.length;j++)
+				{
+					aLi[j].className = "";
+					aDiv[j].className = "";
+				}
+				this.className = "active";
+				aDiv[this.index].className = "active";
+			}
+		</script>
+	</head>
+	<body>
+		<div class="card" id="J_card">
+			<ul class="card_title">
+				<li class="active">选项一</li>
+				<li>选项二</li>
+				<li>选项三</li>
+			</ul>
+			<div class="active">内容一</div>
+			<div>内容二</div>
+			<div>内容三</div>
+		</div>
+	</body>
+</html>

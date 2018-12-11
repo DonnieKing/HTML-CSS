@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// this所在的方法属于谁就指向谁
+
+		var a = 10;
+
+		alert(window.a);
+
+		// function demo()
+		// {
+		// 	alert(this);
+		// }
+		
+		window.demo = function(){
+			alert(this);  //this指向window
+		}
+
+		demo();
+
+		var arr = [1,2,3];
+		arr.demo = function(){
+			alert(this);  //指向arr对象
+		}
+
+		arr.demo();
+	</script>
+</body>
+</html>

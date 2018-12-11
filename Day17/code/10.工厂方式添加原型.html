@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+	function createPerson(name,age){  //构造函数
+	     //构造函数负责添加属性
+		 this.name = name;
+		 this.age = age;
+	}
+
+	//给原型添加方法
+	createPerson.prototype.say = function(){
+		 	console.log("我叫" + this.name);
+    }
+
+	var obj1 = new createPerson("jayjun",18);
+	obj1.say();
+
+	var obj2 = new createPerson("jaychou",28);
+	obj2.say();	
+
+	alert(obj1.say);
+	alert(obj2.say);
+
+	alert(obj1.say == obj2.say); //true
+
+	</script>
+</body>
+</html>
