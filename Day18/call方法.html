@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<script>
+				function a(x,y){
+					 return x+y;
+				}
+				function b(x,y){
+					return x-y;
+				}
+
+				console.log(a.call(b,5,4));
+
+
+
+				function classA(name){
+					this.name=name;
+					this.say=function(){
+						return this.name;
+					}
+				}
+
+				function classB(name){
+					classA.call(this,name);
+				}
+
+				 var a = new classB("wangcai");
+				 console.log(a.name);
+				 console.log(a.say());
+
+		</script>
+</body>
+</html>
