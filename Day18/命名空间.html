@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	  <script>
+	  		var GLOBAL={}; //定义一个全局变量
+
+	  </script>
+
+	  <script>
+	  		GLOBAL.A={};
+	  		GLOBAL.A.name = "小王";
+	  		GLOBAL.A.say=function(){
+	  			console.log(this.name);
+	  		}
+
+	  </script>
+
+	  <script>
+	  		GLOBAL.B={};
+	  		GLOBAL.B.name = "大王";
+	  		GLOBAL.B.say=function(){
+	  			console.log(this.name);
+	  		}
+
+	  </script>
+	  <script>
+	  		console.log(GLOBAL.A.name);
+	  		GLOBAL.B.say();
+
+	  </script>
+</body>
+</html>
