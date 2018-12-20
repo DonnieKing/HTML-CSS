@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<script>
+			 function Animal(name,type){
+			 	 this.name=name;
+			 	 this.type=type;
+			 }
+
+			 Animal.prototype.say = function(){
+			 	 return  "我的名字是"+this.name+"，我是"+ this.type;
+			 }
+
+			 function Dog(name,type){
+			 	Animal.call(this,name,type);    //写子类要把this，还有父类的参数一起写上去；
+			 }
+
+			  // Dog.prototype = Animal.prototype; //两个方法要变一起变    引用赋值
+
+			   for(var i in Animal.prototype){
+			   		Dog.prototype[i]=Animal.prototype[i];
+			   }
+
+			  // Dog.prototype.say=function(){
+			  // 	 return  "少年强则国强";
+			  // }
+
+			 var tom = new Dog("汤姆","dog");
+
+			 console.log(tom.name,tom.type);
+
+			 console.log(tom.say());
+
+			 var jerry = new Animal("Jerry","cat");
+			 console.log(jerry.say());
+		</script>
+</body>
+</html>
