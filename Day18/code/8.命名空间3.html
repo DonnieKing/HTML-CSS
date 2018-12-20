@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			var GLOBAL = {};//定义一个GLOBAL全部变量 
+
+			//定义一个命名空间函数
+			GLOBAL.namespace = function(name)
+			{
+				var arr = name.split('.');
+				var o = GLOBAL;
+				for(var i=(arr[0]=="GLOBAL") ? 1 : 0;i<arr.length;i++)
+				{
+					o[arr[i]] = o[arr[i]] || {};
+					o = o[arr[i]];
+				}
+				return o;
+			}
+
+
+		</script>
+
+		<script>
+			//成员A
+			//命名空间A
+			GLOBAL.namespace("A");
+			GLOBAL.namespace("A").name = "a";
+			GLOBAL.namespace("A").say = function(){
+				console.log(this.name);
+			}
+
+			//命名空间B，是在命名空间A下的
+			GLOBAL.namespace("A.B");
+			GLOBAL.namespace("A.B").name = "b";
+
+			GLOBAL.namespace("A.B").say = function(){
+				console.log(this.name);
+			}
+			
+		</script>
+
+		<script>
+			//成员C
+			console.log(GLOBAL.namespace("A").name); 
+
+			GLOBAL.namespace("A.B").say(); 
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			//成员A
+			(function(){
+				var name = "a";  //局部变量
+			}())
+			
+		</script>
+		<script>
+			//成员B
+			(function(){
+				var name = "b";  //局部变量
+			}())
+		</script>
+		<script>
+			//成员C
+			console.log(name); //此时，获取不到匿名函数中的局部变量！
+		</script>
+	</body>
+</html>

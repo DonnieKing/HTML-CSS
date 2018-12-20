@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			var GLOBAL = {};//定义一个GLOBAL全部变量 
+		</script>
+		<script>
+			//成员A
+			GLOBAL.A = {};
+			GLOBAL.A.name = "a";
+			GLOBAL.A.say = function(){
+				console.log(this.name);
+			}
+			
+		</script>
+		<script>
+			//成员B
+			GLOBAL.B = {};
+			GLOBAL.B.name = "b";
+			GLOBAL.B.say = function(){
+				console.log(this.name);
+			}
+		</script>
+		<script>
+			//成员C
+			console.log(GLOBAL.A.name); 
+
+			GLOBAL.A.say(); 
+		</script>
+	</body>
+</html>

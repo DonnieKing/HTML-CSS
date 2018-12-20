@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+	
+			function c()
+			{
+				alert(this);
+			}
+
+
+			c.call("abc");
+
+			function a(x,y){
+				return x+y;
+			}
+
+			function b(x,y){
+				return x-y;
+			}
+
+			console.log(a.call(b,5,4));
+
+
+			//call来实现继承
+		
+			function ClassA()
+			{
+				this.name = "a";
+				this.say = function(){
+					return this.name;
+				}
+			}
+
+
+			function ClassB()
+			{
+				ClassA.call(this);
+			}
+
+		
+			var obj = new ClassB();
+			console.log(obj.name);
+			console.log(obj.say());
+
+		</script>
+	</body>
+</html>

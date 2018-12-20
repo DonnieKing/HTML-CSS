@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<button id="btn1">打开一个新窗口</button>
+		<button id="btn2">打开一个空白窗口</button>
+		<script>
+			var oBtn1 = document.getElementById("btn1");
+			var oBtn2 = document.getElementById("btn2");
+
+			oBtn1.onclick = function(){
+				window.open("http://www.baidu.com","_blank");
+			}
+
+			oBtn2.onclick = function(){
+				window.open("about:blank","_blank");
+			}
+
+			// oBtn.onclick = function(){
+			// 	window.open("about:blank","_blank")
+			// }
+		</script>
+	</body>
+</html>

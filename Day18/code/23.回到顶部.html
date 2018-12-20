@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			body{height: 2000px;}
+			#goTop{
+				position: fixed;
+				bottom: 100px;
+				right: 0;
+				opacity: 0;
+				filter: alpha(opacity:0);
+			}
+		</style>
+	</head>
+	<body>
+	<script src="move4.js"></script>
+		<a href="javascript:;" id="goTop">回到顶部</a>
+		<script>
+			var oTop = document.getElementById("goTop");
+			oTop.onclick = function(){
+				// document.documentElement.scrollTop = document.body.scrollTop = 0
+				// move(body,{scrollTop:0})
+			}
+			window.onscroll = window.onresize = function(){
+				
+				var scrollTop = document.documentElement.scrollTop 	|| document.body.scrollTop;
+				// console.log(scrollTop);
+				if(scrollTop > 200)
+				{
+					oTop.style.opacity = 1;
+					oTop.style.filter = "alpha(opacity:100)";
+				}
+				else
+				{
+					oTop.style.opacity = 0;
+					oTop.style.filter = "alpha(opacity:0)";
+				}
+			}
+		</script>
+	</body>
+</html>

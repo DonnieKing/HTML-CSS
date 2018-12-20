@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			// 1、为Array扩展一个数组排重的方法
+
+			var arr = ['d','a','b','aa','a','c'];  //=>[1,2,3]
+
+			Array.prototype.unique = function(){
+				this.sort();
+				var o = [this[0]];
+				for(var i=0;i<this.length;i++)
+				{
+					if(this[i] !== o[o.length-1])
+					{
+						o.push(this[i]);
+					}
+				}
+				return o;
+			}
+
+			console.log(arr.unique());
+
+		</script>
+	</body>
+</html>

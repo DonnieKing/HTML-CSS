@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style>
+	body{
+		height:2000px;
+	}
+		#box{
+			position: fixed;
+			right:10px;
+			bottom:30px;
+			opacity:0;
+			filter:alpha(opacity:0);
+
+
+		}
+	</style>
+</head>
+<body>
+
+			<a href="javascript:;" id="box">回到顶部</a>
+			<!-- <script src="move4.js"></script> -->
+			<script>
+			var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+			var oBox = document.getElementById('box');
+			var timer = null;
+			oBox.onclick = function(){
+				// console.log(scrollTop);
+				   
+				timer = setInterval(function(){
+					var scrollTop2 = document.body.scrollTop || document.documentElement.scrollTop;
+					 var speed =scrollTop2/4;
+					speed= speed>0? Math.ceil(speed):Math.floor(speed);
+					console.log(speed);
+					 if(scrollTop2  == 0){
+					 	clearInterval(timer);
+					 }else{
+					 	 document.body.scrollTop=document.documentElement.scrollTop =scrollTop2 - speed  ;
+					 	 // console.log(scrollTop2);
+					 }
+
+				},30);		
+
+
+			}
+
+			 window.onscroll = window.onresize= function(){
+			 		// var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+			 		if(document.body.scrollTop>700){
+			 			oBox.style.opacity = 1;
+			 			oBox.style.filter = "alpha(opacity:50)";
+			 		}
+			 		else
+				 {
+					oBox.style.opacity = 0.5;
+					oBox.style.filter = "alpha(opacity:0)";
+				}
+			 }
+
+
+	
+			</script>
+</body>
+</html>

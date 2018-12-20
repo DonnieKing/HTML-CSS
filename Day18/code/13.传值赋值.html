@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+				var arr1 = [1,2,3];
+
+				var arr2 = [];
+
+				//传值
+				for(var i=0;i<arr1.length;i++)
+				{
+					arr2[i] = arr1[i];
+				}
+
+				console.log(arr1,arr2);  //1,2,3   1,2,3
+				arr2.push(4);
+				console.log(arr1,arr2);  //1,2,3,4   1,2,3,4
+				arr1.push(5);
+				console.log(arr1,arr2);  //1,2,3,4,5   1,2,3,4,5
+		</script>
+	</body>
+</html>

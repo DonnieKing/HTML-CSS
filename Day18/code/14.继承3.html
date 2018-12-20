@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			//定义一个动物类
+			function Animal(name)  //构造函数
+			{
+				this.name = name;
+				this.type = "动物";
+			}
+
+			//原型
+			Animal.prototype.say = function(){
+				return "This is a "+ this.type + ".It's name "+this.name;
+			}
+
+			//定义一个Dog类，继承Animal类
+			
+			//继承构造函数
+			function Dog(name)
+			{
+				Animal.call(this,name);  //让Animal类代替Dog类的this对象
+			}
+
+			//继承原型
+			// Dog.prototype = Animal.prototype;  //引用赋值
+			for(var i in Animal.prototype)
+			{
+				Dog.prototype[i] = Animal.prototype[i];
+			}
+
+			Dog.prototype.wang = function(){
+				return "汪汪汪……";
+			}
+
+			var dog = new Animal("旺财");
+			console.log(dog.wang());   //此时会报错！Animal类没有wang方法
+		</script> 
+	</body>
+</html>

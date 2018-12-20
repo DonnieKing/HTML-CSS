@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<button id="location">跳转到百度</button>
+		<script>
+				// alert(window.location); //获取当前页面URL
+				alert(window.navigator.userAgent);
+				var oLocation = document.getElementById("location");
+				oLocation.onclick = function(){
+					window.location.href = "http://www.baidu.com";
+				}
+		</script>
+	</body>
+</html>
