@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var name = "jayjun";
+		var age = 18;
+
+		//传统的属性写法
+		/*
+		var person = {
+			name:name,
+			age:age
+		}
+		*/
+
+
+		// ES6对象属性的简写
+
+		var person = {
+			name,
+			age
+		}
+		console.log(person);
+		
+		//传统的方法写法
+		/*
+		var person2 = {
+			say:function(){
+				alert('ok');
+			}
+		}
+		*/
+
+		//ES6对象方法的简写
+		var person2 = {
+			say(){
+				alert('ok');
+			}
+		}
+
+		person2.say();
+
+	</script>
+</body>
+</html>

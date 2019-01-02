@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//求任意多个数的和
+		function sum()
+		{
+			let result = 0;
+			for(let i=0;i<arguments.length;i++)
+			{
+				result += arguments[i];
+			}
+			return result;
+		}
+
+		console.log(sum(12,343,5,65,7));
+
+		function sum2(...values)
+		{
+			// console.log(values);
+			let result = 0;
+			values.forEach(function(v){
+				result += v; 
+			});
+			// console.log(result);
+			return result;
+		}
+
+		console.log(sum2(12,343,5,65,7,8,343,34343,434));
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//1、交换变量的值
+
+		//传统的做法
+		var x = 10;
+		var y = 20;
+		var z = x;  //第三变量z临时存放变量x的值
+		x = y;
+		y = z;
+		console.log(x,y); // x=20 y=10
+
+		//解构赋值的做法
+		[x,y] = [y,x];
+		console.log(x,y);  // x=10 y=20
+
+		//2、提取函数返回的多个值
+		function demo(){
+			return {"name":"jayjun","age":18,"sex":"男"};
+		}
+
+		var {name,age} = demo();
+		console.log(name,age);  //jayjun  18
+
+		//3、定义函数参数
+		
+		function demo2({a,b,c}){
+			console.log("姓名："+a);
+			console.log("身高："+b);
+			console.log("体重："+c);
+		}
+
+		demo2({a:"jayjun",b:"1.75m",c:"60kg",d:"10000"})
+		
+		//4、函数参数的默认值
+		//传统的参数默认值的实现方式
+		function sum(a,b){
+			var a = a || 3;
+			var b = b || 5;
+			return a+b;
+		}
+
+		console.log(sum());
+		console.log(sum(12,10));
+
+		//新的函数参数默认值的实现方式
+		function demo3({name="jayjun"}){
+			console.log("姓名："+name);
+		}
+
+		demo3({"name":"jaychou"});
+
+	</script>
+</body>
+</html>

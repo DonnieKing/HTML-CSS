@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//可以嵌套
+		var [a,b,[c1,c2]] = [1,2,[3,4]];
+		console.log(a,b,c1,c2); //a=1 b=2 c1=3 c2=4
+
+		//不完全解构
+		var [a,b,c] = [4,5];
+		console.log(a,b,c);  //a=4,b=5 c = undefined
+
+		//允许设定默认值
+
+		var [a,b,c=3] = [1,2];
+		console.log(a,b,c); //a=1 b=2 c=3
+
+		var [a,b,c=3] = [1,2,4];
+		console.log(a,b,c); // a=1 b=2 c=4
+
+		var [a,b,c] = [1,2,undefined]; 
+		console.log(a,b,c);  //  a=1 b=2 c= undefined
+
+		var [a,b,c='暂无数据'] = [1,2,undefined]; 
+		console.log(a,b,c);   //注意：当新的值为 undefined 的时候，是不会覆盖默认值的。
+
+	</script>
+</body>
+</html>

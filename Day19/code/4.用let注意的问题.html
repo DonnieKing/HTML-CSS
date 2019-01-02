@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		// 同一个块级作用域内，不允许重复声明同一个变量；
+
+	    var name = "jayjun";
+		//let name = "jaychou";  //报错，name重复定义
+
+		function sum(a,b)
+		{
+			// 函数内不能用 let 重新声明函数的参数；
+
+			let a = 10;  
+			return a+b;
+		}
+
+		console.log(sum(2,3));
+
+	</script>
+</body>
+</html>

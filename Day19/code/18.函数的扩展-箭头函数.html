@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//传统定义函数的方式
+		function sum(a,b)
+		{
+			return a+b;
+		}
+
+		//箭头函数
+		var sum2 = (a,b) =>{ return a+b }
+		console.log(sum2(2,3));
+
+		let {name,age} = {"name":"jayjun","age":18};
+
+		// 当函数被作为某个对象的方法调用时，this 就是那个对象（即函数属于谁就指向谁）。
+
+		var person = {
+			name,
+			age,
+			say(){
+				alert(this.name); // jayjun
+			}
+		};
+
+		person.say();
+
+		//特别注意：匿名函数的执行环境具有全局性，因此匿名函数中的 this 对象通常指向 window 对象!
+
+		var person2 = {
+			name:"jaychou",
+			age:28,
+			say(){
+				setInterval(function(){
+					alert(this); //this指向的是window对象
+				},500);
+			}
+		};
+
+		person2.say();
+
+		//箭头函数的 this 指向的是定义时的 this 对象，而不是执行时的 this 对象；
+		var person3 = {
+			name:"jaychou",
+			age:28,
+			say(){
+				setInterval(()=>{
+					alert(this.name);
+				},500);
+			}
+		};
+
+		person3.say();
+	</script>
+</body>
+</html>

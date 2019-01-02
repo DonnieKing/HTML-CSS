@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var {name,height,weight} = {"name":"jayjun","height":1.75,"weight":60};
+
+		//标签模板  =  标签函数 + 字符串模板
+		tagFn`我叫${name}，身高${height}米，体重${weight}kg。`;
+
+		//定义一个函数，作为标签
+		function tagFn(arr,v1,v2,v3)
+		{
+			console.log(arr);  //结果：["我叫","，身高","米。"]
+
+			console.log(v1,v2,v3);  //结果：jayjun  1.75
+		}
+		
+	</script>
+</body>
+</html>

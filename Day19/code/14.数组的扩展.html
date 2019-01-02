@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+	</head>
+	<body>
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<script>
+			//Array.of()函数
+			console.log(Array.of(1,2,3,4)); //结果 [1,2,3,4]
+
+			//Array.from()函数 ：将类数组转变为真正的数组
+			let oPlist = document.getElementsByTagName("p");
+
+			console.log(oPlist instanceof Array); //结果：false，不是数组
+
+			console.log(oPlist instanceof Object); //结果：true，是对象
+
+			let arr = [];
+			console.log(arr instanceof Array); //结果：true，是数组
+
+			console.log(Array.from(oPlist) instanceof Array); //结果：true 是数组
+
+			//Array.from()函数 ：也可以将字符串转换为数组
+			
+			let str = "hello";
+			console.log(Array.from(str));
+
+			//Array.entries()函数 ：对数组的键值对进行遍历，返回一个遍历器
+			for(let [index,value] of ['a','b'].entries())
+			{
+				console.log(index,value);
+			}
+
+
+			//Array.keys()函数 ：对数组的键对进行遍历，返回一个遍历器
+			for(let index of ['a','b'].keys())
+			{
+				console.log(index);
+			}
+
+			//Array.values()函数 ：对数组的值对进行遍历，返回一个遍历器
+			//Array.values 暂时不支持，默认就是对数组的值进行遍历！
+			for(let value of ['a','b']) 
+			{
+				console.log(value);
+			}
+
+		</script>
+	</body>
+</html>

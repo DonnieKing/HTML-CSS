@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var {name,age,sex} = {"name":"jayjun","sex":"男","age":18};
+		
+		var str = "我叫" + name +"，性别" + sex + "，我今年"+age+"岁。"
+		console.log(str);
+
+		//字符串模板  ``(上引号)
+		var str2 = `我叫${name}，性别${sex}，我今年${age}岁。`;
+		console.log(str2);
+
+		//可以定义多行字符串
+		var str3 = `我叫${name}，
+
+
+
+		性别${sex}，            我今年${age}岁。`;
+		console.log(str3);		
+
+		//${} 中可以放任意的js表达式
+		
+		var [a,b] = [1,2];
+		var sum  = `a和b的相加结果是${a+b}。`;
+		console.log(sum);
+
+
+		//${} 中可以是函数的调用
+		
+		function fn(a,b){
+			return a+b;
+		}
+
+		var sum2  = `a和b的相加结果是${ fn(3,2) }。`;
+		console.log(sum2);
+
+		//${} 中可以是对象属性
+		
+		var obj = {"a":1,"b":2};
+		var sum3 = `a + b = ${obj.a+obj.b}`;
+		console.log(sum3);
+
+	</script>
+</body>
+</html>

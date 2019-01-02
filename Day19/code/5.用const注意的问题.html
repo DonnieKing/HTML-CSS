@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const Name = "jayjun";
+		//Name = "jayjun"; //错误，常量不可更改
+
+		if(true)
+		{
+			const Age = 18;
+		}
+
+		//alert(Age); //错误，在块级作用域{}外,Age获取不到
+
+		if(true)
+		{
+			//alert(Sex); //错误，使用前未声明
+			const Sex = "男";
+		}
+
+		//var Name = "abc"; //错误，声明一个已经存在的变量Name
+
+		//const NAME; //错误，只是声明没有赋值
+		
+		const NAME = "cba";
+
+		//如果常量是一个对象呢？
+		
+		const Fruit = ['apple','banana'];
+		Fruit.push('orange');
+		console.log(Fruit); //正确
+		//Fruit = []; //错误，企图给常量Fruit改变新地址
+
+
+		const Person = {"name":"张三"};
+		Person.name = "李四";
+		Person.age = 20;
+		console.log(Person); //正确
+
+		//Person = {}; //错误，企图给常量Person改变新地址
+	</script>
+</body>
+</html>

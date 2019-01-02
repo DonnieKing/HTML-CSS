@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//传统的实现方式
+		function sum(a,b)
+		{
+			var a = a || 3;
+			var b = b || 4;
+			return a+b;
+		}
+		//前提是参数对应的布尔值不能是 false（比如：数字0，空字符串等转换成布尔值就是 false），这就使得这种传统的实现方式存在一定的不足和缺陷。
+		console.log(sum(0,3));  //6 
+
+		// ES6新的函数参数默认值的实现方式
+		function sum2(a=3,b=4)
+		{
+			return a+b;
+		}	
+		console.log(sum2());  // 7	
+		console.log(sum2(0,0));  // 0
+		// 只有当传入的参数为 undefined，才会触发默认值赋值。否则，哪怕你传的参数值为0、false、null 都不会触发默认值赋值。
+		console.log(sum2(0,undefined));  // 4 
+	</script>
+</body>
+</html>
