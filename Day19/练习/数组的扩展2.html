@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	  <p>1</p>
+	  <p>2</p>
+	  <p>3</p>
+
+	  <script>
+	  		let arr =[1,2,3];
+	  		console.log(Array.from(arr) instanceof Object);  //true
+
+	  		let str = "Hello";
+	  		console.log(Array.from(str));
+
+	  		console.log(Array.of(1,2,3,4));
+
+	  		var oPlist = document.getElementsByTagName('p');
+	  		console.log(Array.from(oPlist) instanceof Array);
+
+	  		//Array.entries()
+	  		for(let [index,value] of ["name","age"].entries())
+	  		{
+	  			console.log(index,value);
+	  		}
+
+	  		//Array.keys()
+	  		 for(let index of["wangchu",21].keys())
+	  		 {
+	  		 	console.log(index);
+	  		 }
+
+	  		 //Array.values()   默认不写values
+	  		 for(let value of ["王楚",18])
+	  		 {
+	  		 	console.log(value);
+	  		 }
+
+	  </script>
+</body>
+</html>

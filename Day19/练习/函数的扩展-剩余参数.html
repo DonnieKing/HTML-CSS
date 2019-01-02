@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<script>
+		function sum(){
+			 var result = 0;
+			 for(let i=0;i<arguments.length;i++)
+			 {
+			 	 result +=arguments[i];
+			 }
+			 	return result;
+		}
+
+			console.log(sum(14,56,40));
+
+
+			function sum2(...values){
+				let result = 0;
+				values.forEach(function(v){
+					result += v;
+				})
+				return result;
+			}
+			console.log(sum2(34,16,34,6));
+
+			function sum3(...values){
+				let result = 0;
+				values.forEach(function(v){
+					result +=v;
+				})
+				return result;
+			}
+				console.log(sum3(342,5252,2626));
+
+		</script>
+</body>
+</html>

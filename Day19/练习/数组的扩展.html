@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	  <p>1</p>
+	  <p>2</p>
+	  <p>3</p>
+
+	  <script>
+
+	  		console.log(Array.of(1,2,3,4));
+
+	  		let oPlist = document.getElementsByTagName('p');
+	  		console.log(oPlist instanceof Array);
+	  		console.log(Array.from(oPlist));
+	  		console.log(Array.from(oPlist) instanceof Array);
+
+	  		let str = "hello,world";
+	  		console.log(Array.from(str) );
+	  		console.log(Array.from(str) instanceof Array);
+
+
+	  		//Array.entries( )函数       
+	  		for(let [index,value] of ["name","age"].entries())
+	  		{
+	  			console.log(index,value);         //0 "name"    1 "age"
+	  		}
+
+	  		//Array.keys( )函数   ：对数组的键对进行遍历，返回一个遍历器
+	  		 for(let index of ['name','age','sex'].keys())
+	  		 {
+	  		 	console.log(index);                 //0 1 2 
+	  		 }
+
+	  		 // Array.values( )函数  对值进行遍历
+	  		 for(let value of ["name","age","sex"])
+	  		 {
+	  		 	console.log(value);        //name  age sex
+	  		 }
+	  </script>
+</body>
+</html>

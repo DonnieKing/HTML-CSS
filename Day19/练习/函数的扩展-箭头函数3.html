@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	  <script>
+
+	  			function sum(a,b){
+	  				return a+b;
+	  			}
+
+	  			var sum2 = (a,b)=>{ return a+b} ;
+	  			console.log(sum2(34,6));
+
+
+
+	  			var {name,age} = {"name":"wangchu","age":20};
+
+	  			 var person = {
+
+	  			 	   name,
+	  			 	   age,
+	  			 	   say(){
+	  			 	   		console.log(this.name);
+	  			 	   }
+	  			 }
+	  			  person.say();
+
+
+	  			   // var person2 = {
+	  			   // 	 	name:"jaychou",
+	  			   // 	 	age:39,
+	  			   // 	 	say(){
+	  			   // 	 		setInterval(function(){
+	  			   // 	 			alert(this);
+	  			   // 	 		},5000)
+	  			   // 	 	}
+	  			   // }
+	  			   // person2.say();
+
+
+	  			   var person3={
+	  			   		name:"孙尚香",
+	  			   		age:18,
+	  			   		say(){
+	  			   			setInterval(()=>{
+	  			   				alert(this);
+	  			   			},2000);
+	  			   		}
+	  			   }
+	  			   person3.say();
+
+	  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<script>
+
+				function sum(a,b){
+					return a+b;
+				}
+
+			 let sum2 = (a,b)=>{return a+b} ;
+
+			 	console.log(sum2(10,8));
+
+
+
+			 	let {name,age} = {"name":"王楚","age":20};
+
+			 	var person = {
+			 		 name,
+			 		 age,
+			 		 say(){
+			 		 	 alert(this.name);
+			 		 }
+			 	}
+			 	 person.say();
+
+			 	 var person2 = {       //特别注意：匿名函数的执行环境具有全局性，因此匿名函数中的 this 对象通常指向 window 对象!
+			 	 	name:"wangchu",
+			 	 	age:21,
+			 	 	say(){
+			 	 		setInterval(function(){
+			 	 			console.log(this);  //this指向的是window对象
+			 	 		},500)
+			 	 	}
+			 	 }
+			 	 person2.say();
+
+
+			 	 var person3 = {
+			 	 	name:"wangchu",
+			 	 	age:22,
+			 	 	say(){
+			 	 		setInterval(()=>{
+			 	 			alert(this.name);//箭头函数的 this 指向的是定义时的 this 对象，而不是执行时的 this 对象；
+			 	 		})
+			 	 	}
+			 	 }
+			 	 person3.say();
+		</script>
+</body>
+</html>
