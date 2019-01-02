@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<script>
+				var a=10;
+				var b=20;
+
+				[a,b]=[b,a];
+				console.log(a,b);
+
+
+				function demo(){
+					return {"name":"wangchu","age":21,"weight":60};
+				}
+
+				var {name,age,weight} = demo();
+				console.log(name,age,weight);
+
+
+				function demo2({a,b,c}){
+					console.log("姓名:"+a);
+					console.log("身高:"+b);
+					console.log("体重:"+c);
+				}
+				demo2({a:"wangchu",b:180,c:"70kg"} );
+
+
+
+				function sum(a,b){
+					a = a || 5 ;
+					b = b || 10;
+					return a+b;
+				}
+
+				console.log(sum());
+				console.log(sum(1,2));
+
+
+					//新的函数参数默认值的实现方式
+				 function demo3({name="wangchu"}){
+				 	 console.log("姓名:"+name);
+				 }
+				 demo3({"name":"chuwang"});
+
+
+		</script>
+</body>
+</html>
