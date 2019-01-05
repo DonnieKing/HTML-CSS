@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组操作函数</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+	 //数组合并函数：concat
+	 var a = [1,2,3];
+	 var b = 'DonnieKing';
+	 var c = ['one','two','three'];
+	 var d = a.concat(b,c);
+	 console.log(d);
+
+	 // 将数组元素变成字符串，并且以指定分割符号分割 join()
+	 var m = ['html','css','js'];
+	 var n = m.join('_');  //默认用逗号隔开
+	 console.log(n);
+
+	 // 数组排序函数 reverse() sort()
+    // reverse()数组元素逆向排序
+    // sort()数组元素按照一定规则排序(ASCLL字符顺序)
+    var k = [1,100,12,10000,88];
+    console.log(k.reverse());
+    console.log(k.sort());
+
+    // 删除元素并向数组添加新元素 splice()
+   var course = ['html','css','js','php'];
+   var p = course.splice(1,2,'java');
+   console.log(course);
+
+   // 从数组中返回选定的元素 slice(起始位置，end)
+    var hm = ['html','css','js','php'];
+    
+	</script>
+</body>
+</html>
