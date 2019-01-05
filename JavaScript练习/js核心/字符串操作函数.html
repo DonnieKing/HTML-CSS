@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>字符串操作函数</title>
+</head>
+<body>
+     <script type="text/javascript">
+
+     		var txt = "hello world";
+     		//计算字符串的长度
+     		document.write(txt.length+'<br>');
+
+     		//charAt() 返回一个字符值，是指定索引位置的的值
+     		document.write(txt.charAt(1)+'<br>');
+
+     		//查找字符（返回的都是整数值）
+     		//indexOf()指出字符串的开始位置
+     		document.write(txt.indexOf('o')+'<br>');
+     		//laseIndexOf()指出最后一个字符串的开始位置
+     		document.write(txt.lastIndexOf('o')+'<br>');
+
+     		//substring(开始下标，结束)返回一个字字符串,不加结束下标，默认取剩余全部
+     		document.write(txt.substring(2)+',<br>');
+
+     		//replace('被替换的','新的字符串');
+     		document.write(txt.replace('world','DonnieKing')+'<br>');
+
+     		//concat()连接两个字符串
+     		var text = '我是DonnieKing';
+     		document.write(txt.concat(text)+'<br>');
+
+     		//substr(开始下标，截取长度)返回一个字字符串
+     		document.write(txt.substr(0,10));
+
+     </script>
+</body>
+</html>
