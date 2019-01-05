@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>类型转换函数</title>
+</head>
+<body>
+	 <!-- 字符转数字函数 -->
+	 <script type="text/javascript">
+	 document.write('字符串转数字的方法：');
+ 	 document.write('<hr>');
+	 //1、string-0
+	 var x = "123";
+	 var y = x-0;
+	 document.write(x+'<br>'+y+'<br>');
+	 document.write(typeof(x)+'<br>');
+	 document.write(typeof(y)+'<br>');
+	 document.write('<hr>');
+	 
+	 //2.Number(string)
+	 var m = "456";
+	 var n = Number(m);
+	 document.write(m+'<br>'+n+'<br>');
+	 document.write(typeof(m)+'<br>');
+	 document.write(typeof(n)+'<br>');
+	 document.write('<hr>');
+
+	 //3、parseInt(string)忽略非数字部分，从第一个字符开始找，找到非数字截止，只取整数部分，忽略小数
+	 var o = '123DonnieKing456';
+	 document.write(typeof(parseInt(o))+'<br>');
+	 document.write(o+'<br>');
+	 document.write(parseInt(o));
+	 document.write('<hr>');
+
+	 //4、parseFloat()把小数部分也取到
+	 var k = '123.456我听说你是中北的';
+	 document.write(typeof(parseFloat(k))+'<br>');
+	 document.write(parseFloat(k)+'<br>');
+	 document.write('<hr>');
+
+
+ 	// 数字转字符串
+ 	document.write('数字转字符串的方法：');
+ 	document.write('<hr>');
+ 	//1、number+""  数字加空字符串的方法
+ 	var f = 123;
+ 	var h = f+'';
+ 	document.write(typeof(h));
+ 	document.write('<hr>');
+
+ 	//2、String()
+ 	var y = 456;
+ 	document.write(typeof(String(y)));
+ 	document.write('<hr>');
+
+ 	//3、number.toString
+ 	var T = 789;
+ 	var U = T.toString();
+ 	document.write(typeof(U)+'<br>');
+ 	
+	 </script>
+</body>
+</html>
