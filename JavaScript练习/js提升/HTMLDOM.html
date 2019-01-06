@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HTML DOM(文档对象模型)</title>
+</head>
+<body>
+	<!--  当网页被加载时，浏览器会创建页面的文档对象模型（Document Obiect Model）
+
+ 可以改变html元素的内容 （操作html元素内容）
+
+ 改变HTML
+ 改变HTML的输出流
+ document.write() -->
+<!-- 
+ 查找HTML元素：
+ 通过ID来查找： document.getElementById("id名")；
+ 通过class来查找： document.getElementsByClassName("class名")；
+ 通过标签名（tag name）来查找： document.getElementsByTagName("tag名") -->
+ <!-- 改变html元素内容
+ 使用innerHTML -->
+
+<!--  改变HTML的属性(只能对元素自有属性进行一个操作)
+ 语法：document.getElementById("id").属性名称 ="属性值" -->
+ 
+ <div style="width:100px;height: 100px;background: red;" id="div_one" onclick="one()"></div>
+ <img src="static/images/1.jpg" id="pic" onclick="two(this)" >
+
+ <script type="text/javascript">
+
+ 		 var oDiv = document.getElementById('div_one');
+
+ 		 function one()
+ 		 {
+ 		 	oDiv.innerHTML = '我是DonnieKing';
+ 		 	oDiv.style.background = 'lightblue';
+ 		 }
+
+ 		 function two(x)
+ 		 {
+ 		 	document.getElementById('pic').src = 'static/images/2.jpg';
+ 		 }
+ </script>
+
+</body>
+</html>
