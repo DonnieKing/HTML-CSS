@@ -31,8 +31,20 @@
    var p = course.splice(1,2,'java');
    console.log(course);
 
-   // 从数组中返回选定的元素 slice(起始位置，end)
+   // 从数组中返回选定的元素 slice(起始位置，end), 不包含最后一个元素
     var hm = ['html','css','js','php'];
+    var hm_one = hm.slice(0,2);
+    console.log(hm_one);
+
+    //push向数组末尾添加一个或多个元素，并返回一个新数组的长度
+    //pop删除并返回数组的最后一个元素
+    var hm_two = hm.push('c','c++');
+    console.log(hm_two);
+    console.log(hm);
+
+    var hm_three = hm.pop();
+    console.log(hm_three);
+    console.log(hm);
     
 	</script>
 </body>
