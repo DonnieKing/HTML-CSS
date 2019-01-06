@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>日期</title>
+</head>
+<body>
+	 
+	  <script type="text/javascript">
+
+	  //获取当前时间
+	    var myDay = new Date();
+
+	    //获取当前年份
+	    document.write("今年是"+myDay.getFullYear()+'<br>');
+
+	    //获取当前月份  0代表1月，11月代表12月
+	    document.write("本月是"+(myDay.getMonth()+1)+"月"+'<br>');
+
+	    //获取当前日期
+	    document.write('今天是'+myDay.getDate()+"日"+'<br>');
+
+	    //获取星期 getDay
+	    document.write("今天是星期"+myDay.getDay()+'<br>');
+
+	    //获取 小时getHours()  分钟getMinutes()    秒getSeconds()
+	    document.write("现在是"+myDay.getHours()+"时"+myDay.getMinutes()+"分"+myDay.getSeconds()+"秒"+'<br>');
+
+
+
+	  </script>
+
+</body>
+</html>
