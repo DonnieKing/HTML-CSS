@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery选择器</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+// 属性选择器
+// 语法：
+// $('[属性名]')匹配包含给定属性的元素
+// $('[attribute=value]')匹配给定属性是某个特定值的元素
+//$('[attribute！=value]')匹配所有不含有指定值的属性，或者说是属性不等于特定值的元素
+// $('[attribute ^= value]')匹配给定属性是以某些值开始的元素
+// $('[attribute $= value]')匹配给定属性是以某些值结尾的元素
+// $('[attribute *= value]')匹配给定属性包含某些值的元素
+//$('attrSel[1] attrSel[1] attrSel[1]')复合选择器，需要同时满足多个条件时使用
+		
+		$(document).ready(function(){
+			// $('input[type]').css('background','red');
+			// $('input[type = text]').css('background','red');
+			// $('input[type != text]').css('background','lightblue');
+			// $('input[name ^=n]').css('background','blue');
+			 // $('input[name $=w]').css('background','pink');
+			 // $('input[name *= w]').css('background','grey');
+			 // $('input[id][name *=w]').css('background','grey');
+		})
+
+// 表单选择器
+// 语法：
+// $(':enabled')所有激活的input元素（可以使用的input元素）
+// $(':disabled')所有禁用的input元素（不可以使用的input元素）
+ // $(':selected')所有被选取的元素，针对于select元素
+ // $(':checked')所有被选中的input元素
+ 	$(document).ready(function(){
+ 		// $(':enabled').css('background','red');
+ 		// $(':disabled').css('background','red');
+ 		$(':selected').css('background','lightblue');   //select是特殊的input框
+ 		$(':checked').parent().css('background','lightblue'); 
+
+ 	})
+
+	</script>
+
+	1: <input type="text" name="new" id="new"><br>
+	2: <input type="password" name="new1"><br>
+	3: <input type="button" value="点我"><br>
+	4: <input type="password" name="new1" disabled><br>
+	<select >
+		<option>摩羯座</option>
+		<option selected>水瓶座</option>
+		<option>巨蟹座</option>
+	</select>
+
+爱好：
+	<label><input type="checkbox" name="">看书</label>
+	<label><input type="checkbox" name="" checked>睡觉</label>
+	<label><input type="checkbox" name="">玩游戏</label>
+
+</body>
+</html>
