@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<script type="text/javascript">
+
+	 	// $(选择器).action()
+
+		//文档就绪函数
+		$(document).ready(function(){
+			//jquery代码
+			$("div").hide();
+
+			$("button").click(function(){
+				$("div").show();
+			})
+			
+		})
+	</script>
+
+	<div style="width: 100px;height: 100px;background: pink;"></div>
+	<button>点击显示</button>
+</body>
+</html>
