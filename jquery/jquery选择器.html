@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery选择器</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<style>
+		#box,.box{
+			width: 100px;
+			height: 100px;
+			background: lightblue;
+			margin-top: 20px;
+		}
+		.div div{
+			width: 100px;
+			height: 100px;
+			background: lightblue;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+//基本选择器
+// 语法
+// $('#id名')根据给定的id来匹配到元素
+// $('.class名')根据给定的class来匹配到元素
+// $('element')根据给定的标签名来匹配到元素
+// $('*')匹配所有元素
+// $('#id,.class名,element')匹配到页面中多个选择器
+		$(document).ready(function(){
+
+			$('#box').css('background','red');
+			$('.box').css('font-size','24px');
+			// $('span').css('border','5px solid red');
+			// $('*').hide();
+			$('#box,.box,span').css('color','pink');
+
+		})
+
+
+//  层级选择器（相当于父类和子类的元素关系）
+
+// 给定的父级元素下匹配所有的子元素：$('父级元素 > 子级元素')
+// 给定的祖先元素下匹配所有的后代元素：$('祖先元素  后代元素')
+// 匹配紧跟在prev元素后面的next元素：$('prev + next')(同级的元素)
+// 匹配prev元素后面所有的siblings元素：$('prev ~ siblings')
+		$(document).ready(function(){
+			//$("ul>li").css('list-style','none');
+			$("ul li").css('list-style','none');
+			$("label+input").css('height','50px');
+			$("label~input ").css('background','red');
+		})
+
+
+// 顺序选择器
+// 1、顺序
+// $(':first') 第一个元素
+// $(':last')  最后一个元素
+// 2、比较(x的顺序是从0开始)
+// $(':gt(x)')表示大于值x的元素
+// $(':lt(x)')表示小于值x的元素
+// $(':eq(x)')表示等于值x的元素
+// 3、奇偶数
+// $(':odd')奇数顺序
+// $(':even')偶数顺序
+// 4、非
+// $(':not(selector)')匹配不是selector的所有元素
+	$(document).ready(function(){
+		// $("p:first").css("color","red");
+		// $("p:last").css("color","red");
+		// $('p:gt(1)').css("color",'blue');
+		// $('p:lt(1)').css("color",'#ccc');
+		// $('P:eq(1)').css("color",'red');
+		$('p:odd').css('background','lightblue');
+		$('p:even').css('background','grey	');
+		$('p:not(#one)').css('color','#6633aa');
+	})
+// 内容选择器
+// 语法：
+// $(':contains(text)') 匹配包含给定文本（text）的元素
+ // $(':has(selector)')匹配包含特定选择器元素的元素
+ // $(':empty')匹配不含有内容的元素（即 不包含子元素或者文本的空元素）
+ // $(':parent')匹配含有子元素或者文本的元素
+
+	 $(document).ready(function(){
+	 	$(".div div:contains(jack)").css('background','red');
+	 	$(".div div:has(span)").css('font-size','22px');
+	 	// $(".div div:empty").css('background','blue');
+	 	$(".div div:parent").css('background','red');
+
+	 })
+
+
+
+
+	</script>
+
+
+
+	<div id="box">你好</div>
+	<div class="box">大家好啊</div>
+	<span>我是DonnieKing</span>
+<hr></hr>
+
+	<ul>
+		<li>1</li>
+		<div><li>2</li></div>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	<label for="input">姓名</label>
+	<input id="input" type="text">
+	<button>点我</button>
+	<input type="text">
+<hr></hr>
+
+	<p id="one">1</p>
+	<p>2</p>
+	<p>3</p>
+	<p>4</p>
+	<p>5</p>
+<hr></hr>
+
+  <div class="div">
+		<div>jack</div>
+		<div>jun</div>
+		<div>jijijiji</div>
+		<div><span>111111</span></div>
+		<div></div>
+  </div>
+	
+</body>
+</html>
